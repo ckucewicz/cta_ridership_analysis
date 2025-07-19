@@ -1,15 +1,15 @@
-# Business Understanding
+# 1. Project Overview
 
-# Data Understanding
+# 2. Data Sources
 
-## Data Preparation
+# 3. Database Setup
 
-# Analysis
+# 4. Data Exploration and Cleaning
 
-# Conclusion
+# 5. Analytical Queries
 
-## Limitations
+# 6. Visualization (Tableau)
 
-## Recommendations
+# 7. Key Takeaways
 
-## Next Steps
+# 8. Reproducibility
