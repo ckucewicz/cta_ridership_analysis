@@ -13,6 +13,18 @@ This project analyzes ridership patterns on the Chicago Transit Authority's (CTA
 
 
 # 2. Data Sources
+All data for this project comes from the City of Chicago’s Open Data Portal, which provides publicly available datasets related to city infrastructure, transportation, and more.
+
+
+I used two primary datasets:
+
+1. [CTA 'L' Station Information](https://data.cityofchicago.org/Transportation/CTA-System-Information-List-of-L-Stops/8pix-ypme/about_data):
+* Contains metadata about each stop, including direction, station name, and which lines it serves.
+* Key columns: station_name, map_id, direction_id, and line indicators such as red, blue, green, etc.
+
+2. [CTA 'L' Station Entries - Daily Totals](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f/about_data)
+* Contains daily ridership counts (entries only) for each station, beginning in 2001. 
+* Key columns: station_id, station_name, ride_date, day_type, rides
 
 # 3. Database Setup
 
