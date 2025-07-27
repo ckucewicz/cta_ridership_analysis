@@ -70,8 +70,19 @@ ON ridership_l_stations.station_id = dup_tuples.station_id
 AND ridership_l_stations.ride_date = dup_tuples.ride_date
 ORDER BY ridership_l_stations.station_id, ridership_l_stations.ride_date;
 
--- determine the range of rides values between duplicated rows in the ridership table
-SELECT station_id, ride_date, 
+-- Query: determine the range of rides values between duplicated rows in the ridership table
+-- Finding: differences ranged from 1 to 500+. Because of the range of differences, I will calculate and use the average of the duplicate rows. 
+SELECT 
+ 	station_id,
+ 	ride_date,
+ 	MAX(rides) - MIN(rides) AS ride_diff,
+  	COUNT(*) AS num_duplicates
+FROM ridership_l_stations
+GROUP BY station_id, ride_date
+HAVING COUNT(*)> 1;
+
+
+
 
 ---- To determine the keys in each table to join on
 
