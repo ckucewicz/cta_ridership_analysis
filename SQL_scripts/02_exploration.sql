@@ -35,7 +35,7 @@ FROM l_station_info;
 -- Query Goal: check for duplicates in ridership table
 
 -- Step 1: determine the amount of duplicates
--- Finding: There are 618 duplicate rows
+-- Finding: There are 618 duplicate rows. This will act as a subquery in a future query
 SELECT station_id, ride_date, COUNT(*) AS dup_count
 	FROM ridership_l_stations
 	GROUP BY station_id, ride_date
@@ -72,6 +72,9 @@ ORDER BY ridership_l_stations.station_id, ridership_l_stations.ride_date;
 
 -- Query: determine the range of rides values between duplicated rows in the ridership table
 -- Finding: differences ranged from 1 to 500+. Because of the range of differences, I will calculate and use the average of the duplicate rows. 
+
+-- STEP 1: Run query to calculate the differences in number of rides between duplicate rows
+-- This query will be used as a subquery in the next query.
 SELECT 
  	station_id,
  	ride_date,
@@ -81,8 +84,48 @@ FROM ridership_l_stations
 GROUP BY station_id, ride_date
 HAVING COUNT(*)> 1;
 
+-- Step 2: Calculate the maximum, minimum, and average difference in number of rides for duplicate rows
+-- Finding: The max difference was 583, the minimum difference was 1, and the average difference was 21.6
+SELECT MAX(ride_diff) AS max_difference, MIN(ride_diff) AS min_difference, AVG(ride_diff) AS average_diff
+FROM (
+	SELECT 
+	 	station_id,
+	 	ride_date,
+	 	MAX(rides) - MIN(rides) AS ride_diff,
+	  	COUNT(*) AS num_duplicates
+	FROM ridership_l_stations
+	GROUP BY station_id, ride_date
+	HAVING COUNT(*)> 1
+);
 
 
+---- Handle duplicate rows by taking the average of the number of rides grouped by duplicated rows
+-- Step 1: create CTE 
+WITH duplicates_table AS (
+	SELECT stations1.station_id, stations1.station_name, stations1.ride_date, stations1.day_type, stations1.rides, dup_tuples.dup_count
+	FROM ridership_l_stations AS stations1
+	JOIN (
+		SELECT station_id, ride_date, COUNT(*) AS dup_count
+		FROM ridership_l_stations
+		GROUP BY station_id, ride_date
+		HAVING COUNT(*) > 1
+		) AS dup_tuples
+	ON stations1.station_id = dup_tuples.station_id
+	AND stations1.ride_date = dup_tuples.ride_date
+	ORDER BY stations1.station_id, stations1.ride_date
+)
+
+-- Step 2: Calculate the average number of rides for duplicate rows
+-- Finding: The number of total rows in the output is 618 which is half of the number of total rows in the duplicates_table (1236) so this correctly removed the duplicates
+SELECT station_id, station_name, ride_date, day_type, CAST(AVG(rides) AS INT) AS rides_averaged
+FROM duplicates_table
+GROUP BY station_id, station_name, ride_date, day_type;
+
+-- Step 3: Get all non-duplicated rows from ridership_l_stations
+SELECT *, COUNT(*)
+FROM ridership_l_stations
+GROUP BY station_id, ride_date
+HAVING COUNT(*) = 1;
 
 ---- To determine the keys in each table to join on
 
