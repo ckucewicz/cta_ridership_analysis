@@ -1,3 +1,8 @@
+-- ============================================================
+-- Initial Exploration of the Data
+-- ============================================================
+-- Goal 1: Identify the total observations within each table
+
 -- Inspect the first 5 rows of each table
 SELECT * FROM ridership_l_stations LIMIT 10;
 
@@ -10,6 +15,8 @@ SELECT COUNT(*) FROM ridership_l_stations;
 -- Query: Count the number of rows in the station_info table
 -- Finding: There are 302 rows in the station_info table
 SELECT COUNT(*) FROM l_station_info; 
+
+-- Goal 2: Determine the number of null values in each table
 
 -- Query: Count the number of null values in all columns of the ridership table
 -- Finding: There are zero nulls in each column of the ridership table
@@ -32,9 +39,9 @@ SELECT
 FROM l_station_info;
 
 
--- Query Goal: check for duplicates in ridership table
+-- Goal 3: Learn more about the duplicate rows in each table
 
--- Step 1: determine the amount of duplicates
+-- Step 1: Determine the amount of duplicates
 -- Finding: There are 618 duplicate rows. This will act as a subquery in a future query
 SELECT station_id, ride_date, COUNT(*) AS dup_count
 	FROM ridership_l_stations
@@ -98,55 +105,57 @@ FROM (
 	HAVING COUNT(*)> 1
 );
 
+-- ============================================================
+-- Data Cleaning
+-- ============================================================
+-- Goal: Clean and de-duplicate CTA ridership data by averaging ride counts for duplicate rows
 
----- Handle duplicate rows by taking the average of the number of rides grouped by duplicated rows
--- Step 1: create CTE 
+-- Step 1: Identify and extract duplicate rows from the ridership table
+CREATE TABLE cleaned_ridership AS
 WITH duplicates_table AS (
-	SELECT stations1.station_id, stations1.station_name, stations1.ride_date, stations1.day_type, stations1.rides, dup_tuples.dup_count
-	FROM ridership_l_stations AS stations1
+	SELECT r.station_id, r.station_name, r.ride_date, r.day_type, r.rides
+	FROM ridership_l_stations AS r
 	JOIN (
-		SELECT station_id, ride_date, COUNT(*) AS dup_count
+		SELECT station_id, ride_date
 		FROM ridership_l_stations
 		GROUP BY station_id, ride_date
 		HAVING COUNT(*) > 1
-		) AS dup_tuples
-	ON stations1.station_id = dup_tuples.station_id
-	AND stations1.ride_date = dup_tuples.ride_date
-	ORDER BY stations1.station_id, stations1.ride_date
+	) AS dup
+	ON r.station_id = dup.station_id AND r.ride_date = dup.ride_date
+),
+
+-- Step 2: Average the ride counts for each group of duplicate rows
+averaged_duplicates AS (
+	SELECT station_id, station_name, ride_date, day_type, CAST(AVG(rides) AS INT) AS rides
+	FROM duplicates_table
+	GROUP BY station_id, station_name, ride_date, day_type
+),
+
+-- Step 3: Select all rows that are not part of a duplicate group
+unduplicated_ridership_l_stations AS (
+	SELECT station_id, station_name, ride_date, day_type, rides
+	FROM ridership_l_stations
+	WHERE (station_id, ride_date) IN (
+		SELECT station_id, ride_date
+		FROM ridership_l_stations
+		GROUP BY station_id, ride_date
+		HAVING COUNT(*) = 1
+	)
 )
 
--- Step 2: Calculate the average number of rides for duplicate rows
--- Finding: The number of total rows in the output is 618 which is half of the number of total rows in the duplicates_table (1236) so this correctly removed the duplicates
-SELECT station_id, station_name, ride_date, day_type, CAST(AVG(rides) AS INT) AS rides_averaged
-FROM duplicates_table
-GROUP BY station_id, station_name, ride_date, day_type;
+-- Step 4: Combine the deduplicated rows with the averaged duplicates
+SELECT * FROM unduplicated_ridership_l_stations
+UNION ALL
+SELECT * FROM averaged_duplicates;
 
--- Step 3: Get all non-duplicated rows from ridership_l_stations
-SELECT *, COUNT(*)
-FROM ridership_l_stations
-GROUP BY station_id, ride_date
-HAVING COUNT(*) = 1;
+-- Confirming the table saved successfully
+SELECT * 
+FROM cleaned_ridership
+LIMIT 10;
 
----- To determine the keys in each table to join on
-
--- Query: Inspect difference between stop_name and station_name
--- Finding: The stop_name column includes the direction the train is going at the station
-SELECT stop_name, station_name
-FROM l_station_info;
-
--- Query: Tests which key to join both tables on
--- Finding: 
-SELECT COUNT(*)
-FROM (
-	SELECT DISTINCT station_id FROM ridership_l_stations
-	INTERSECT
-	SELECT DISTINCT stop_id FROM l_station_info
-) AS matched_ids;
-
--- this gives a clue that the station_id and map_id will be the keys to match on
-SELECT COUNT(*)
-FROM (
-	SELECT DISTINCT station_id FROM ridership_l_stations
-	INTERSECT
-	SELECT DISTINCT map_id FROM l_station_info
-) AS matched_ids;
+-- ============================================================
+-- Merge station-level metadata with cleaned ridership records
+-- ============================================================
+-- Goal: Join cleaned_ridership table with l_station_info table
+-- Step 1: Identify the appropriate key for joining
+-- Step 2: Use a LEFT JOIN to merge cleaned_ridership (left) with l_station_info (right)
