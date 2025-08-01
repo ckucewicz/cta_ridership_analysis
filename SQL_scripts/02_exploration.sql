@@ -156,6 +156,85 @@ LIMIT 10;
 -- ============================================================
 -- Merge station-level metadata with cleaned ridership records
 -- ============================================================
+
 -- Goal: Join cleaned_ridership table with l_station_info table
 -- Step 1: Identify the appropriate key for joining
+
+-- Query: Checking to see if station_id and stop_id are matching keys
+-- Finding: Output a table with zero rows, so station_id and stop_id are not the correct keys to match on
+SELECT cleaned_ridership.station_id, l_station_info.stop_id FROM cleaned_ridership
+INNER JOIN l_station_info
+	ON cleaned_ridership.station_id = l_station_info.stop_id;
+
+-- Query: Trying station_id and map_id
+-- Finding: There is overlap between station_id nad map_id, which indicates that this may be the correct keys to join on
+SELECT cleaned_ridership.station_id, l_station_info.map_id FROM cleaned_ridership
+INNER JOIN l_station_info
+	ON cleaned_ridership.station_id = l_station_info.map_id;
+
+-- Query: Count the number of unique station_ids in cleaned_ridership
+-- Finding: There are 148 unique station_ids
+SELECT DISTINCT station_id FROM cleaned_ridership;
+
+-- Query: Count the number of unique map_ids in l_station_info
+-- Finding: There are 144 unique map_ids
+SELECT DISTINCT map_id FROM l_station_info;
+
+-- Query: Return all unique (station_id, map_id) pairs where station_id matches map_id
+-- Finding: There are 144 unique station_ids that match map_ids
+SELECT DISTINCT cleaned_ridership.station_id, l_station_info.map_id
+FROM cleaned_ridership
+INNER JOIN l_station_info
+  ON cleaned_ridership.station_id = l_station_info.map_id;
+
+-- Query: Return station_ids in cleaned_ridership that do not match any map_ids in l_station_info
+-- Finding: The four unmatched station_ids are stations that were at one point active, but now closed
+SELECT DISTINCT cleaned_ridership.station_id, cleaned_ridership.station_name
+FROM cleaned_ridership
+LEFT JOIN l_station_info
+	ON cleaned_ridership.station_id = l_station_info.map_id
+WHERE l_station_info.map_id IS NULL;
+
+-- Query: Delete the four inactive stations from the cleaned_ridership table
+DELETE FROM cleaned_ridership
+WHERE station_id IN (40500, 40640, 41580, 40200);
+
+-- Query: Confirming that the rows with the inactive stations were succesfully removed
+SELECT DISTINCT station_id
+FROM cleaned_ridership
+WHERE station_id IN (40500, 40640, 41580, 40200);
+
 -- Step 2: Use a LEFT JOIN to merge cleaned_ridership (left) with l_station_info (right)
+CREATE TABLE final_ridership AS (
+	SELECT 
+		ridership.station_id,
+		stations.map_id,
+		stations.station_descriptive_name, 
+		ridership.ride_date, ridership.day_type,
+		ridership.rides,
+		stations.ada_approved,
+		stations.red, 
+		stations.blue, 
+		stations.green, 
+		stations.brownn, 
+		stations.purple, 
+		stations.pexp, 
+		stations.yellow,
+		stations.pnk, 
+		stations.orange,
+		stations.location
+	FROM cleaned_ridership AS ridership
+	LEFT JOIN (
+		SELECT DISTINCT ON (map_id) *
+		FROM l_station_info
+		ORDER BY map_id, direction_id
+	) AS stations
+	ON ridership.station_id = stations.map_id
+);
+
+-- Query: Checks for duplicate rows in new table
+-- Finding: The returned table had zero rows, indicating that there are no duplicates
+SELECT station_id, ride_date, COUNT(*) AS dup_count
+FROM final_ridership
+GROUP BY station_id, ride_date
+HAVING COUNT(*) > 1;

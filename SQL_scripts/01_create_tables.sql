@@ -17,7 +17,7 @@ CREATE TABLE L_station_info (
 	red BOOLEAN, 
 	blue BOOLEAN,
 	green BOOLEAN,
-	brownn BOOLEAN,
+	brown BOOLEAN,
 	purple BOOLEAN,
 	pexp BOOLEAN,
 	yellow BOOLEAN,
