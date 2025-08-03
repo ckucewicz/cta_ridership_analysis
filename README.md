@@ -91,3 +91,16 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
 4. **High Ridership is Concentrated at a Few Key Stations**
    
 	Stations like Lake, O’Hare, and Clark/Lake handle the most riders due to their centrality and transfer options.
+
+# 7. Repository Structure
+<pre>
+```
+cta_ridership_analysis/
+├── SQL_scripts/              # SQL queries used for data cleaning and exploration
+├── images/                   # Project images for README or GitHub Pages
+├── Ridership Analysis.ipynb  # Main Jupyter notebook with analysis and visualizations
+├── README.md                 # Project overview, key takeaways, and next steps
+├── .gitignore                # Ignore rules for files like Jupyter checkpoints
+```
+</pre>
+
