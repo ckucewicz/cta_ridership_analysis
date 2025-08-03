@@ -1,6 +1,3 @@
-# {{ site.title }}
-
-# CTA Ridership Analysis  
 *Exploring post-pandemic ridership trends, accessibility gaps, and system usage across Chicago’s 'L' network.*
 
 ---
