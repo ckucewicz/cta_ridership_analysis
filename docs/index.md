@@ -29,7 +29,7 @@ CTA ridership plummeted during the pandemic and has yet to fully rebound. This a
 
 ### Annual Ridership Trend (2001–Present)
 CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pandemic levels. As of 2024, total boardings are only **~63%** of pre-COVID averages.
-<iframe src="annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="figures/annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
 
 ---
 
