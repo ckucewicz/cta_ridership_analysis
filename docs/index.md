@@ -69,8 +69,8 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 | O’Hare (Blue Line)  | 5.79M       |
 | Clark/Lake (Loop)   | 5.26M       |
 
-### Map: Which CTA Stations are the Busiest? (Post-COVID)
-Each circle represents a CTA ‘L’ station, color-coded by line and sized by total ridership since May 2023. Use the legend to interpret line colors and approximate usage. Multi-line stations appear in grey. 
+### **Map: Which CTA Stations are the Busiest? (Post-COVID)**
+*Each circle represents a CTA ‘L’ station, color-coded by line and sized by total ridership since May 2023. Use the legend to interpret line colors and approximate usage. Multi-line stations appear in grey.* 
 
 <iframe src="figures/station_ridership_map.html" width="100%" height="600" style="border:none;"></iframe>
 
@@ -79,14 +79,14 @@ Each circle represents a CTA ‘L’ station, color-coded by line and sized by t
 ## 6. Accessibility Gaps
 Riders with disabilities still face barriers at **nearly 30%** of CTA stations. Non-accessible stops are concentrated along the Blue and Pink Lines, limiting equitable transit access across the system.
 
-### Map: Which CTA Stations are Non-ADA Accessible?  
+### **Map: Which CTA Stations are Non-ADA Accessible?**  
 *Each marker represents a CTA ‘L’ station that is not currently ADA accessible. Zoom and pan to explore patterns by line and location.*
 
 <iframe src="figures/ada_access_map.html" width="100%" height="600" style="border:none;"></iframe>
 
 <br>
 
-### ADA Accessibility by CTA Line 
+### **ADA Accessibility by CTA Line** 
 _The share of stations on each line that are ADA accessible as of 2023._
 
 | Line              | Total Stations | ADA Accessible | Percent Accessible (%) |
