@@ -1,0 +1,2819 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aa58052b7870410eb949e6c936159e06 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_aa58052b7870410eb949e6c936159e06" ></div>
+        
+    
+<div style="position: fixed; 
+            top: 20px; right: 20px; width: 270px; z-index: 9999; font-size: 14px;
+            background-color: white; padding: 10px; border:2px solid grey; border-radius: 6px;">
+    <strong>Total CTA Station Ridership Since May 2023</strong><br><br>
+    <u>Line Colors</u><br>
+    <i style="background:red;color:red">....</i> Red&nbsp;&nbsp;
+    <i style="background:blue;color:blue">....</i> Blue&nbsp;&nbsp;
+    <i style="background:green;color:green">....</i> Green<br>
+    <i style="background:saddlebrown;color:saddlebrown">....</i> Brown&nbsp;&nbsp;
+    <i style="background:purple;color:purple">....</i> Purple&nbsp;&nbsp;
+    <i style="background:yellow;color:yellow">....</i> Yellow<br>
+    <i style="background:deeppink;color:deeppink">....</i> Pink&nbsp;&nbsp;
+    <i style="background:orange;color:orange">....</i> Orange&nbsp;&nbsp;
+    <i style="background:grey;color:grey">....</i> Multi-line<br><br>
+    <u>Dot Size (approximate ridership)</u><br>
+    <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:black;"></span> Low<br>
+    <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:black;"></span> Moderate<br>
+    <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:black;"></span> High
+</div>
+</body>
+<script>    
+    
+            var map_aa58052b7870410eb949e6c936159e06 = L.map(
+                "map_aa58052b7870410eb949e6c936159e06",
+                {
+                    center: [41.8781, -87.6298],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b9bfd0ad80104cce89d8318aa205491b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+            var circle_marker_31c2e07a1763438fb8fa6d69122a3aa7 = L.circleMarker(
+                [41.85182, -87.745336],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.3519101493285672, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_412770a15c14489087f6e6c867978f2b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ccc8af2b37fd43a2b0de3aa1be4329df = $(`<div id="html_ccc8af2b37fd43a2b0de3aa1be4329df" style="width: 100.0%; height: 100.0%;">Cicero<br>Lines: Pink<br>Total Rides: 541,661</div>`)[0];
+            popup_412770a15c14489087f6e6c867978f2b.setContent(html_ccc8af2b37fd43a2b0de3aa1be4329df);
+        
+
+        circle_marker_31c2e07a1763438fb8fa6d69122a3aa7.bindPopup(popup_412770a15c14489087f6e6c867978f2b)
+        ;
+
+        
+    
+    
+            var circle_marker_2a5ddfabb5574af7b59596513aa63387 = L.circleMarker(
+                [41.853839, -87.714842],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.2229741653054311, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_3072d011107941c380010fcc2e13924a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8644720ed18a4a99b1a1ed9be7309ac6 = $(`<div id="html_8644720ed18a4a99b1a1ed9be7309ac6" style="width: 100.0%; height: 100.0%;">Central Park<br>Lines: Pink<br>Total Rides: 459,681</div>`)[0];
+            popup_3072d011107941c380010fcc2e13924a.setContent(html_8644720ed18a4a99b1a1ed9be7309ac6);
+        
+
+        circle_marker_2a5ddfabb5574af7b59596513aa63387.bindPopup(popup_3072d011107941c380010fcc2e13924a)
+        ;
+
+        
+    
+    
+            var circle_marker_6dd8ecae01c742fc830061f48d0d44c6 = L.circleMarker(
+                [41.778943, -87.644244],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7862432319617804, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a3f6da3197204501b03af5218f8bb227 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_02cba59a98b7441b9b72670cca41bb3a = $(`<div id="html_02cba59a98b7441b9b72670cca41bb3a" style="width: 100.0%; height: 100.0%;">Halsted<br>Lines: Green<br>Total Rides: 181,999</div>`)[0];
+            popup_a3f6da3197204501b03af5218f8bb227.setContent(html_02cba59a98b7441b9b72670cca41bb3a);
+        
+
+        circle_marker_6dd8ecae01c742fc830061f48d0d44c6.bindPopup(popup_a3f6da3197204501b03af5218f8bb227)
+        ;
+
+        
+    
+    
+            var circle_marker_135e41a4ce544637adcb1bf62a164861 = L.circleMarker(
+                [41.984246, -87.838028],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4374636885883003, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_73b2dd3bee6b400fa1c364797c9c0f98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_86c8a559d300495ea4d226f16452686b = $(`<div id="html_86c8a559d300495ea4d226f16452686b" style="width: 100.0%; height: 100.0%;">Cumberland<br>Lines: Blue<br>Total Rides: 1,231,877</div>`)[0];
+            popup_73b2dd3bee6b400fa1c364797c9c0f98.setContent(html_86c8a559d300495ea4d226f16452686b);
+        
+
+        circle_marker_135e41a4ce544637adcb1bf62a164861.bindPopup(popup_73b2dd3bee6b400fa1c364797c9c0f98)
+        ;
+
+        
+    
+    
+            var circle_marker_c8621cb6b87d43e2839c2fbdfa1ffdb2 = L.circleMarker(
+                [41.87592, -87.659458],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0795434993018458, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_33c4e481a05944e9a3019fce9ed03c3d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e2a9b40c458f431d909b091bd7ee6029 = $(`<div id="html_e2a9b40c458f431d909b091bd7ee6029" style="width: 100.0%; height: 100.0%;">Racine<br>Lines: Blue<br>Total Rides: 368,485</div>`)[0];
+            popup_33c4e481a05944e9a3019fce9ed03c3d.setContent(html_e2a9b40c458f431d909b091bd7ee6029);
+        
+
+        circle_marker_c8621cb6b87d43e2839c2fbdfa1ffdb2.bindPopup(popup_33c4e481a05944e9a3019fce9ed03c3d)
+        ;
+
+        
+    
+    
+            var circle_marker_24ef05ee8ffe4078a76c9cb51922124c = L.circleMarker(
+                [41.943623, -87.670907],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0548550421707796, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_8a2a7eb62ac6488da579a628ebe98e6e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c3bc6ae15705453a9e623b5d02575e77 = $(`<div id="html_c3bc6ae15705453a9e623b5d02575e77" style="width: 100.0%; height: 100.0%;">Paulina<br>Lines: Brown<br>Total Rides: 988,607</div>`)[0];
+            popup_8a2a7eb62ac6488da579a628ebe98e6e.setContent(html_c3bc6ae15705453a9e623b5d02575e77);
+        
+
+        circle_marker_24ef05ee8ffe4078a76c9cb51922124c.bindPopup(popup_8a2a7eb62ac6488da579a628ebe98e6e)
+        ;
+
+        
+    
+    
+            var circle_marker_8cbb491103cc4764bf20d7ce80dc0b1a = L.circleMarker(
+                [41.857908, -87.669147],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.7973951408214346, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_34b99d837ec943c5a5f63cb6a5d184da = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a7f832941ee4b24893dabe9a30b761e = $(`<div id="html_4a7f832941ee4b24893dabe9a30b761e" style="width: 100.0%; height: 100.0%;">18th<br>Lines: Pink<br>Total Rides: 824,909</div>`)[0];
+            popup_34b99d837ec943c5a5f63cb6a5d184da.setContent(html_4a7f832941ee4b24893dabe9a30b761e);
+        
+
+        circle_marker_8cbb491103cc4764bf20d7ce80dc0b1a.bindPopup(popup_34b99d837ec943c5a5f63cb6a5d184da)
+        ;
+
+        
+    
+    
+            var circle_marker_7e6bb5c284784634922478bb5d8a1e42 = L.circleMarker(
+                [41.885737, -87.630886],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.777680737643426, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_19d3f628915c4c1fa428a2c1e2e39ec1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_79856ad6d9d94a2b8835096fd45d3e9d = $(`<div id="html_79856ad6d9d94a2b8835096fd45d3e9d" style="width: 100.0%; height: 100.0%;">Clark/Lake<br>Lines: Blue<br>Total Rides: 5,263,110</div>`)[0];
+            popup_19d3f628915c4c1fa428a2c1e2e39ec1.setContent(html_79856ad6d9d94a2b8835096fd45d3e9d);
+        
+
+        circle_marker_7e6bb5c284784634922478bb5d8a1e42.bindPopup(popup_19d3f628915c4c1fa428a2c1e2e39ec1)
+        ;
+
+        
+    
+    
+            var circle_marker_4309e8b171b44e27b09114091d89de77 = L.circleMarker(
+                [41.970634, -87.760892],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.581195068914223, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d2c845ab06294c0c864156dcc179efc1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d48124e1a4a143bb98e8d22a5238aa14 = $(`<div id="html_d48124e1a4a143bb98e8d22a5238aa14" style="width: 100.0%; height: 100.0%;">Jefferson Park<br>Lines: Blue<br>Total Rides: 2,594,903</div>`)[0];
+            popup_d2c845ab06294c0c864156dcc179efc1.setContent(html_d48124e1a4a143bb98e8d22a5238aa14);
+        
+
+        circle_marker_4309e8b171b44e27b09114091d89de77.bindPopup(popup_d2c845ab06294c0c864156dcc179efc1)
+        ;
+
+        
+    
+    
+            var circle_marker_e29d54f66af6425080d0a78a721fae9d = L.circleMarker(
+                [41.932732, -87.653131],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.375546106331452, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_1138974037d3477e9117cf4c471a6335 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f1e039f3698469c92b3fd71a0ea81e6 = $(`<div id="html_1f1e039f3698469c92b3fd71a0ea81e6" style="width: 100.0%; height: 100.0%;">Diversey<br>Lines: Brown, Purple_Express<br>Total Rides: 1,828,328</div>`)[0];
+            popup_1138974037d3477e9117cf4c471a6335.setContent(html_1f1e039f3698469c92b3fd71a0ea81e6);
+        
+
+        circle_marker_e29d54f66af6425080d0a78a721fae9d.bindPopup(popup_1138974037d3477e9117cf4c471a6335)
+        ;
+
+        
+    
+    
+            var circle_marker_cc4984276e4b477c95d1493041ba4c61 = L.circleMarker(
+                [41.961756, -87.675047],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.8244594298318044, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e2c16941147b4ca185ee4e3d077ccddd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a870e439a8bc44c69df7ed42a5e999a6 = $(`<div id="html_a870e439a8bc44c69df7ed42a5e999a6" style="width: 100.0%; height: 100.0%;">Montrose<br>Lines: Brown<br>Total Rides: 842,117</div>`)[0];
+            popup_e2c16941147b4ca185ee4e3d077ccddd.setContent(html_a870e439a8bc44c69df7ed42a5e999a6);
+        
+
+        circle_marker_cc4984276e4b477c95d1493041ba4c61.bindPopup(popup_e2c16941147b4ca185ee4e3d077ccddd)
+        ;
+
+        
+    
+    
+            var circle_marker_c9401c20a55f40eb97dfb59e882e8ed0 = L.circleMarker(
+                [41.875474, -87.649707],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.434048567879495, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_6d146f63962844e89e69e4ce19f3a19c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8df58363a96c4360ac29187c575a8895 = $(`<div id="html_8df58363a96c4360ac29187c575a8895" style="width: 100.0%; height: 100.0%;">UIC-Halsted<br>Lines: Blue<br>Total Rides: 1,865,525</div>`)[0];
+            popup_6d146f63962844e89e69e4ce19f3a19c.setContent(html_8df58363a96c4360ac29187c575a8895);
+        
+
+        circle_marker_c9401c20a55f40eb97dfb59e882e8ed0.bindPopup(popup_6d146f63962844e89e69e4ce19f3a19c)
+        ;
+
+        
+    
+    
+            var circle_marker_e21df564febc4b969b9f988d53525ea9 = L.circleMarker(
+                [41.831677, -87.625826],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.4468176026085395, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a727735bdba249c483a6eab4c5ae2f64 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_044ec354674b4823869fd7552acb2eb1 = $(`<div id="html_044ec354674b4823869fd7552acb2eb1" style="width: 100.0%; height: 100.0%;">35th-Bronzeville-IIT<br>Lines: Green<br>Total Rides: 602,005</div>`)[0];
+            popup_a727735bdba249c483a6eab4c5ae2f64.setContent(html_044ec354674b4823869fd7552acb2eb1);
+        
+
+        circle_marker_e21df564febc4b969b9f988d53525ea9.bindPopup(popup_a727735bdba249c483a6eab4c5ae2f64)
+        ;
+
+        
+    
+    
+            var circle_marker_f28c8f8e400d470fb28489735e0db923 = L.circleMarker(
+                [42.05416, -87.68356],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9067601586236594, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_462258958b2542628276f9de7765a345 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e08550a6670f4f1c8785fcda47e62f6d = $(`<div id="html_e08550a6670f4f1c8785fcda47e62f6d" style="width: 100.0%; height: 100.0%;">Foster<br>Lines: Purple, Purple_Express<br>Total Rides: 258,626</div>`)[0];
+            popup_462258958b2542628276f9de7765a345.setContent(html_e08550a6670f4f1c8785fcda47e62f6d);
+        
+
+        circle_marker_f28c8f8e400d470fb28489735e0db923.bindPopup(popup_462258958b2542628276f9de7765a345)
+        ;
+
+        
+    
+    
+            var circle_marker_b0182abb6c1540efb49afea7fab0067a = L.circleMarker(
+                [41.878723, -87.63374],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.423507209751699, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_11ec34c58d6e448480fc3f66571fbbec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9f7dcfcc203447829a7499fea82dc598 = $(`<div id="html_9f7dcfcc203447829a7499fea82dc598" style="width: 100.0%; height: 100.0%;">Quincy/Wells<br>Lines: Brown<br>Total Rides: 2,494,642</div>`)[0];
+            popup_11ec34c58d6e448480fc3f66571fbbec.setContent(html_9f7dcfcc203447829a7499fea82dc598);
+        
+
+        circle_marker_b0182abb6c1540efb49afea7fab0067a.bindPopup(popup_11ec34c58d6e448480fc3f66571fbbec)
+        ;
+
+        
+    
+    
+            var circle_marker_5ecf5aa9c2894be89faff6d1ef85a8c5 = L.circleMarker(
+                [41.943744, -87.663619],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5745183302050867, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_5d1db0d1b2744c749c5f86b76e8c7763 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2cabb908b9624f0191d1dec60130e1d8 = $(`<div id="html_2cabb908b9624f0191d1dec60130e1d8" style="width: 100.0%; height: 100.0%;">Southport<br>Lines: Brown<br>Total Rides: 1,319,019</div>`)[0];
+            popup_5d1db0d1b2744c749c5f86b76e8c7763.setContent(html_2cabb908b9624f0191d1dec60130e1d8);
+        
+
+        circle_marker_5ecf5aa9c2894be89faff6d1ef85a8c5.bindPopup(popup_5d1db0d1b2744c749c5f86b76e8c7763)
+        ;
+
+        
+    
+    
+            var circle_marker_74895405a516492d8ff8cf6a691640f4 = L.circleMarker(
+                [42.001073, -87.661061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6678539534968575, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_94b45f00f8e4470b9f9766d310c54e4e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5d01262a520747328fc9d558bce50682 = $(`<div id="html_5d01262a520747328fc9d558bce50682" style="width: 100.0%; height: 100.0%;">Loyola<br>Lines: Red<br>Total Rides: 2,014,183</div>`)[0];
+            popup_94b45f00f8e4470b9f9766d310c54e4e.setContent(html_5d01262a520747328fc9d558bce50682);
+        
+
+        circle_marker_74895405a516492d8ff8cf6a691640f4.bindPopup(popup_94b45f00f8e4470b9f9766d310c54e4e)
+        ;
+
+        
+    
+    
+            var circle_marker_028bd254a35b4e988e28f5d7b60cab16 = L.circleMarker(
+                [41.810318, -87.63094],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.8898962504132462, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_de94dc06cd4749cca136456eab20f10a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_40161f7401a1452098d72104703f62dc = $(`<div id="html_40161f7401a1452098d72104703f62dc" style="width: 100.0%; height: 100.0%;">47th<br>Lines: Red<br>Total Rides: 883,723</div>`)[0];
+            popup_de94dc06cd4749cca136456eab20f10a.setContent(html_40161f7401a1452098d72104703f62dc);
+        
+
+        circle_marker_028bd254a35b4e988e28f5d7b60cab16.bindPopup(popup_de94dc06cd4749cca136456eab20f10a)
+        ;
+
+        
+    
+    
+            var circle_marker_e36d79ba6df5408289942941dc646a60 = L.circleMarker(
+                [41.983504, -87.65884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1674829361922585, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a2224a40fe674631b46d313d0c8079c4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3cd25df4e24433bb847490bf4d5e0ae = $(`<div id="html_f3cd25df4e24433bb847490bf4d5e0ae" style="width: 100.0%; height: 100.0%;">Bryn Mawr<br>Lines: Red<br>Total Rides: 1,060,218</div>`)[0];
+            popup_a2224a40fe674631b46d313d0c8079c4.setContent(html_f3cd25df4e24433bb847490bf4d5e0ae);
+        
+
+        circle_marker_e36d79ba6df5408289942941dc646a60.bindPopup(popup_a2224a40fe674631b46d313d0c8079c4)
+        ;
+
+        
+    
+    
+            var circle_marker_e2e7dea54dae4c41ac811505977368e9 = L.circleMarker(
+                [41.87349, -87.806961],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8523594907610558, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a3c7c38fd4ee4f86ba405f45d865eed7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eba86b181f924076931523ddb12e7bbb = $(`<div id="html_eba86b181f924076931523ddb12e7bbb" style="width: 100.0%; height: 100.0%;">Harlem<br>Lines: Blue<br>Total Rides: 224,037</div>`)[0];
+            popup_a3c7c38fd4ee4f86ba405f45d865eed7.setContent(html_eba86b181f924076931523ddb12e7bbb);
+        
+
+        circle_marker_e2e7dea54dae4c41ac811505977368e9.bindPopup(popup_a3c7c38fd4ee4f86ba405f45d865eed7)
+        ;
+
+        
+    
+    
+            var circle_marker_1ad6205b6b4743cbbfa5be7fd25ba3fe = L.circleMarker(
+                [42.019063, -87.672892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5998613757302778, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_23d31ba52c7c439a830062b2c04b39d9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cd0ef84ed33042f4b829efb703429b53 = $(`<div id="html_cd0ef84ed33042f4b829efb703429b53" style="width: 100.0%; height: 100.0%;">Howard<br>Lines: Red<br>Total Rides: 1,970,952</div>`)[0];
+            popup_23d31ba52c7c439a830062b2c04b39d9.setContent(html_cd0ef84ed33042f4b829efb703429b53);
+        
+
+        circle_marker_1ad6205b6b4743cbbfa5be7fd25ba3fe.bindPopup(popup_23d31ba52c7c439a830062b2c04b39d9)
+        ;
+
+        
+    
+    
+            var circle_marker_29d02aa705974680bbe7c2748618ff14 = L.circleMarker(
+                [41.884321, -87.706155],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.169806551986303, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_83a9e67a25ae4dd1a517f3b4dd377c5b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f5928c01aa14c12bb12dc12cad27397 = $(`<div id="html_8f5928c01aa14c12bb12dc12cad27397" style="width: 100.0%; height: 100.0%;">Kedzie<br>Lines: Green<br>Total Rides: 425,876</div>`)[0];
+            popup_83a9e67a25ae4dd1a517f3b4dd377c5b.setContent(html_8f5928c01aa14c12bb12dc12cad27397);
+        
+
+        circle_marker_29d02aa705974680bbe7c2748618ff14.bindPopup(popup_83a9e67a25ae4dd1a517f3b4dd377c5b)
+        ;
+
+        
+    
+    
+            var circle_marker_7e33bd4c025242ea922f21c28338c2ce = L.circleMarker(
+                [41.78013, -87.615546],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7538582496853666, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_1501cf68b4d046ddb8049a5fd116f151 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4dd08d3c14984fa19488517aacb7acc3 = $(`<div id="html_4dd08d3c14984fa19488517aacb7acc3" style="width: 100.0%; height: 100.0%;">King Drive<br>Lines: Green<br>Total Rides: 161,408</div>`)[0];
+            popup_1501cf68b4d046ddb8049a5fd116f151.setContent(html_4dd08d3c14984fa19488517aacb7acc3);
+        
+
+        circle_marker_7e33bd4c025242ea922f21c28338c2ce.bindPopup(popup_1501cf68b4d046ddb8049a5fd116f151)
+        ;
+
+        
+    
+    
+            var circle_marker_6a7768a904e342149d0282ff1fcfbce9 = L.circleMarker(
+                [41.77886, -87.663766],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.052007378195758, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c92e1a64c5994c7c9a2aa512bb63f7ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2d0466d6bab5473b9b870672c2fadbd8 = $(`<div id="html_2d0466d6bab5473b9b870672c2fadbd8" style="width: 100.0%; height: 100.0%;">Ashland/63rd<br>Lines: Green<br>Total Rides: 350,977</div>`)[0];
+            popup_c92e1a64c5994c7c9a2aa512bb63f7ba.setContent(html_2d0466d6bab5473b9b870672c2fadbd8);
+        
+
+        circle_marker_6a7768a904e342149d0282ff1fcfbce9.bindPopup(popup_c92e1a64c5994c7c9a2aa512bb63f7ba)
+        ;
+
+        
+    
+    
+            var circle_marker_c71668c579c44bf783c2decc2aa00a07 = L.circleMarker(
+                [41.722377, -87.624342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.811071665947909, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_700efb9c77a94a14ad5dfb953e33eac8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73036b13bddb47c4babdf2d1ca6f4222 = $(`<div id="html_73036b13bddb47c4babdf2d1ca6f4222" style="width: 100.0%; height: 100.0%;">95th/Dan Ryan<br>Lines: Red<br>Total Rides: 2,741,063</div>`)[0];
+            popup_700efb9c77a94a14ad5dfb953e33eac8.setContent(html_73036b13bddb47c4babdf2d1ca6f4222);
+        
+
+        circle_marker_c71668c579c44bf783c2decc2aa00a07.bindPopup(popup_700efb9c77a94a14ad5dfb953e33eac8)
+        ;
+
+        
+    
+    
+            var circle_marker_fe6300f1f98145bbb3b038635d2d04df = L.circleMarker(
+                [41.916157, -87.687364],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.458810316262763, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f3d91edf41654bab899f9e1244f006cd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c696f9dc67b4ea5830716f62bc9cbb5 = $(`<div id="html_7c696f9dc67b4ea5830716f62bc9cbb5" style="width: 100.0%; height: 100.0%;">Western<br>Lines: Blue<br>Total Rides: 1,881,269</div>`)[0];
+            popup_f3d91edf41654bab899f9e1244f006cd.setContent(html_7c696f9dc67b4ea5830716f62bc9cbb5);
+        
+
+        circle_marker_fe6300f1f98145bbb3b038635d2d04df.bindPopup(popup_f3d91edf41654bab899f9e1244f006cd)
+        ;
+
+        
+    
+    
+            var circle_marker_073cf7df558e4177b5e93019de3d3c83 = L.circleMarker(
+                [41.918217, -87.652644],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.011324756684052, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_40609a63d5424309b7bc10728425c5bc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31de75d3053d447ca95a6df3edc0830d = $(`<div id="html_31de75d3053d447ca95a6df3edc0830d" style="width: 100.0%; height: 100.0%;">Armitage<br>Lines: Brown, Purple_Express<br>Total Rides: 1,596,749</div>`)[0];
+            popup_40609a63d5424309b7bc10728425c5bc.setContent(html_31de75d3053d447ca95a6df3edc0830d);
+        
+
+        circle_marker_073cf7df558e4177b5e93019de3d3c83.bindPopup(popup_40609a63d5424309b7bc10728425c5bc)
+        ;
+
+        
+    
+    
+            var circle_marker_9e0f1113ff244604b54e386637601b9c = L.circleMarker(
+                [41.867368, -87.627402],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.606741316795304, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e5b8f25b61ba4603a6145bcdbc8bbafd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_15e2861abcb84a5faf51cfa46775786d = $(`<div id="html_15e2861abcb84a5faf51cfa46775786d" style="width: 100.0%; height: 100.0%;">Roosevelt<br>Lines: Red<br>Total Rides: 4,518,604</div>`)[0];
+            popup_e5b8f25b61ba4603a6145bcdbc8bbafd.setContent(html_15e2861abcb84a5faf51cfa46775786d);
+        
+
+        circle_marker_9e0f1113ff244604b54e386637601b9c.bindPopup(popup_e5b8f25b61ba4603a6145bcdbc8bbafd)
+        ;
+
+        
+    
+    
+            var circle_marker_bccda02f04764569a97d5f661892af85 = L.circleMarker(
+                [41.939751, -87.65338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.373333842911997, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_5240d8e533ff44f3a66e1c2c9c4c8f29 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b3f3642d7fb945daab14cbf7c2ec3ad5 = $(`<div id="html_b3f3642d7fb945daab14cbf7c2ec3ad5" style="width: 100.0%; height: 100.0%;">Belmont<br>Lines: Red<br>Total Rides: 4,370,199</div>`)[0];
+            popup_5240d8e533ff44f3a66e1c2c9c4c8f29.setContent(html_b3f3642d7fb945daab14cbf7c2ec3ad5);
+        
+
+        circle_marker_bccda02f04764569a97d5f661892af85.bindPopup(popup_5240d8e533ff44f3a66e1c2c9c4c8f29)
+        ;
+
+        
+    
+    
+            var circle_marker_f942c1d8217e4efa80d4ff8fd15511d9 = L.circleMarker(
+                [41.85177331, -87.75669201],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9957014523306462, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_1c62ef03bf97408da6b406e910d11c5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_48ce578e740c4a0b865c596d5472e81a = $(`<div id="html_48ce578e740c4a0b865c596d5472e81a" style="width: 100.0%; height: 100.0%;">54th/Cermak<br>Lines: Pink<br>Total Rides: 950,996</div>`)[0];
+            popup_1c62ef03bf97408da6b406e910d11c5c.setContent(html_48ce578e740c4a0b865c596d5472e81a);
+        
+
+        circle_marker_f942c1d8217e4efa80d4ff8fd15511d9.bindPopup(popup_1c62ef03bf97408da6b406e910d11c5c)
+        ;
+
+        
+    
+    
+            var circle_marker_7578e61cfc6e482a8ad1b5895591136e = L.circleMarker(
+                [42.041655, -87.681602],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.942057917704304, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e1c8b6e868df417c92968dec00481db5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8ca7095bc7dc491ca75463ea3aa5e65f = $(`<div id="html_8ca7095bc7dc491ca75463ea3aa5e65f" style="width: 100.0%; height: 100.0%;">Dempster<br>Lines: Purple, Purple_Express<br>Total Rides: 281,069</div>`)[0];
+            popup_e1c8b6e868df417c92968dec00481db5.setContent(html_8ca7095bc7dc491ca75463ea3aa5e65f);
+        
+
+        circle_marker_7578e61cfc6e482a8ad1b5895591136e.bindPopup(popup_e1c8b6e868df417c92968dec00481db5)
+        ;
+
+        
+    
+    
+            var circle_marker_3fb1da6559364e90befa668ff7215c24 = L.circleMarker(
+                [41.925051, -87.652866],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.922131190083222, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d2cb5c3057e844d3acb6c34b2c1dc68a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_993b3b1059bf41729d7d40f0541018ee = $(`<div id="html_993b3b1059bf41729d7d40f0541018ee" style="width: 100.0%; height: 100.0%;">Fullerton<br>Lines: Brown, Purple_Express<br>Total Rides: 4,719,135</div>`)[0];
+            popup_d2cb5c3057e844d3acb6c34b2c1dc68a.setContent(html_993b3b1059bf41729d7d40f0541018ee);
+        
+
+        circle_marker_3fb1da6559364e90befa668ff7215c24.bindPopup(popup_d2cb5c3057e844d3acb6c34b2c1dc68a)
+        ;
+
+        
+    
+    
+            var circle_marker_45d50c70b2b947988469408fc16ccb25 = L.circleMarker(
+                [41.969139, -87.658493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_552338e0b7a746a6ab1fb150c0346572 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4638cb1cef524960b81211ae7fc87e65 = $(`<div id="html_4638cb1cef524960b81211ae7fc87e65" style="width: 100.0%; height: 100.0%;">Lawrence<br>Lines: Red<br>Total Rides: 0</div>`)[0];
+            popup_552338e0b7a746a6ab1fb150c0346572.setContent(html_4638cb1cef524960b81211ae7fc87e65);
+        
+
+        circle_marker_45d50c70b2b947988469408fc16ccb25.bindPopup(popup_552338e0b7a746a6ab1fb150c0346572)
+        ;
+
+        
+    
+    
+            var circle_marker_a0889a8bd6674a9cb1915194c07586e6 = L.circleMarker(
+                [41.875706, -87.673932],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.745776709549913, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_cde89b6253d546279e3e271d75a1757c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8a56caf33f5f47359ac376545d2fe361 = $(`<div id="html_8a56caf33f5f47359ac376545d2fe361" style="width: 100.0%; height: 100.0%;">Illinois Medical District<br>Lines: Blue<br>Total Rides: 792,089</div>`)[0];
+            popup_cde89b6253d546279e3e271d75a1757c.setContent(html_8a56caf33f5f47359ac376545d2fe361);
+        
+
+        circle_marker_a0889a8bd6674a9cb1915194c07586e6.bindPopup(popup_cde89b6253d546279e3e271d75a1757c)
+        ;
+
+        
+    
+    
+            var circle_marker_2b0bbc17625c4756a1f5def1f8578952 = L.circleMarker(
+                [41.884809, -87.627813],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.5, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_2038504631c44f84ae733f27e389a545 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_295bb604034840ef81a2be9510658528 = $(`<div id="html_295bb604034840ef81a2be9510658528" style="width: 100.0%; height: 100.0%;">Lake<br>Lines: Red<br>Total Rides: 6,358,194</div>`)[0];
+            popup_2038504631c44f84ae733f27e389a545.setContent(html_295bb604034840ef81a2be9510658528);
+        
+
+        circle_marker_2b0bbc17625c4756a1f5def1f8578952.bindPopup(popup_2038504631c44f84ae733f27e389a545)
+        ;
+
+        
+    
+    
+            var circle_marker_5a35d1adde2e4821be4c6cb9c6956e27 = L.circleMarker(
+                [41.750419, -87.625112],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.505199275140079, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e7ba23354f644a1c94eaf663e16e5d3d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_58d0890644bd4495bc06bf81c9eadfdb = $(`<div id="html_58d0890644bd4495bc06bf81c9eadfdb" style="width: 100.0%; height: 100.0%;">79th<br>Lines: Red<br>Total Rides: 1,910,764</div>`)[0];
+            popup_e7ba23354f644a1c94eaf663e16e5d3d.setContent(html_58d0890644bd4495bc06bf81c9eadfdb);
+        
+
+        circle_marker_5a35d1adde2e4821be4c6cb9c6956e27.bindPopup(popup_e7ba23354f644a1c94eaf663e16e5d3d)
+        ;
+
+        
+    
+    
+            var circle_marker_ac48c4c38f9e4ec88ea3e63aed4f32ff = L.circleMarker(
+                [41.887293, -87.774135],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.415656238233687, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_53137f65c9654dad98d37320a670de25 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b5d68d2a3ecd4074a7ded68329aa7d6f = $(`<div id="html_b5d68d2a3ecd4074a7ded68329aa7d6f" style="width: 100.0%; height: 100.0%;">Austin<br>Lines: Green<br>Total Rides: 582,192</div>`)[0];
+            popup_53137f65c9654dad98d37320a670de25.setContent(html_b5d68d2a3ecd4074a7ded68329aa7d6f);
+        
+
+        circle_marker_ac48c4c38f9e4ec88ea3e63aed4f32ff.bindPopup(popup_53137f65c9654dad98d37320a670de25)
+        ;
+
+        
+    
+    
+            var circle_marker_6dc54b83ae294160be8a77e4b47d2e12 = L.circleMarker(
+                [41.875539, -87.640984],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0717796594441755, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_505939bbd0684e15ae383c7afa8429db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93a6da050efe4baa8173e36bf961200f = $(`<div id="html_93a6da050efe4baa8173e36bf961200f" style="width: 100.0%; height: 100.0%;">Clinton<br>Lines: Blue<br>Total Rides: 999,368</div>`)[0];
+            popup_505939bbd0684e15ae383c7afa8429db.setContent(html_93a6da050efe4baa8173e36bf961200f);
+        
+
+        circle_marker_6dc54b83ae294160be8a77e4b47d2e12.bindPopup(popup_505939bbd0684e15ae383c7afa8429db)
+        ;
+
+        
+    
+    
+            var circle_marker_1bb88c09d8504dce94a24837129d626f = L.circleMarker(
+                [41.936033, -87.653266],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1501604071848073, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c852d319e8f8448cb2d7a248b4082cb5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f2177ea4e52e4e649a81f7e5d9304fa1 = $(`<div id="html_f2177ea4e52e4e649a81f7e5d9304fa1" style="width: 100.0%; height: 100.0%;">Wellington<br>Lines: Brown, Purple_Express<br>Total Rides: 1,049,204</div>`)[0];
+            popup_c852d319e8f8448cb2d7a248b4082cb5.setContent(html_f2177ea4e52e4e649a81f7e5d9304fa1);
+        
+
+        circle_marker_1bb88c09d8504dce94a24837129d626f.bindPopup(popup_c852d319e8f8448cb2d7a248b4082cb5)
+        ;
+
+        
+    
+    
+            var circle_marker_6179563f19224ac0be6df6f290db0681 = L.circleMarker(
+                [41.886988, -87.793783],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.2305800986884012, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_5aa6b1d71c364e6ab33e7fcdf32fe70f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_900b03f837aa488a8da73617cb354a0f = $(`<div id="html_900b03f837aa488a8da73617cb354a0f" style="width: 100.0%; height: 100.0%;">Oak Park<br>Lines: Green<br>Total Rides: 464,517</div>`)[0];
+            popup_5aa6b1d71c364e6ab33e7fcdf32fe70f.setContent(html_900b03f837aa488a8da73617cb354a0f);
+        
+
+        circle_marker_6179563f19224ac0be6df6f290db0681.bindPopup(popup_5aa6b1d71c364e6ab33e7fcdf32fe70f)
+        ;
+
+        
+    
+    
+            var circle_marker_442e302a46c748f08ea35da4881de019 = L.circleMarker(
+                [41.896671, -87.628176],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.951244803162659, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c0f0b5685b97445d84cb3cf14720a4ad = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c266485a3d92497a8c9a55dd63168e65 = $(`<div id="html_c266485a3d92497a8c9a55dd63168e65" style="width: 100.0%; height: 100.0%;">Chicago<br>Lines: Red<br>Total Rides: 4,737,646</div>`)[0];
+            popup_c0f0b5685b97445d84cb3cf14720a4ad.setContent(html_c266485a3d92497a8c9a55dd63168e65);
+        
+
+        circle_marker_442e302a46c748f08ea35da4881de019.bindPopup(popup_c0f0b5685b97445d84cb3cf14720a4ad)
+        ;
+
+        
+    
+    
+            var circle_marker_db9d58f451614091b0c1e139edac2ea2 = L.circleMarker(
+                [41.910409, -87.639302],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.9149326050762214, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_744ea4c17bd544a7b62d0ed750d51e9f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9db98c33a9c3445b8d0f5ee806668e38 = $(`<div id="html_9db98c33a9c3445b8d0f5ee806668e38" style="width: 100.0%; height: 100.0%;">Sedgwick<br>Lines: Brown, Purple_Express<br>Total Rides: 1,535,461</div>`)[0];
+            popup_744ea4c17bd544a7b62d0ed750d51e9f.setContent(html_9db98c33a9c3445b8d0f5ee806668e38);
+        
+
+        circle_marker_db9d58f451614091b0c1e139edac2ea2.bindPopup(popup_744ea4c17bd544a7b62d0ed750d51e9f)
+        ;
+
+        
+    
+    
+            var circle_marker_bb41ecf92048421192b0ad827d094533 = L.circleMarker(
+                [41.94738, -87.71906],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0788634319745514, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_75b3f223416a4028a8ec080b7295c7a5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2dfb120bb17e477f90b0c89f6ec600a0 = $(`<div id="html_2dfb120bb17e477f90b0c89f6ec600a0" style="width: 100.0%; height: 100.0%;">Addison<br>Lines: Blue<br>Total Rides: 1,003,872</div>`)[0];
+            popup_75b3f223416a4028a8ec080b7295c7a5.setContent(html_2dfb120bb17e477f90b0c89f6ec600a0);
+        
+
+        circle_marker_bb41ecf92048421192b0ad827d094533.bindPopup(popup_75b3f223416a4028a8ec080b7295c7a5)
+        ;
+
+        
+    
+    
+            var circle_marker_7702344acfae450fa3df4496126cb8dc = L.circleMarker(
+                [41.878183, -87.629296],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.7982919363580288, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_fe031d97cfa4454b97af459d0f1d4823 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0064dcad6ea94abead60f433d59589ca = $(`<div id="html_0064dcad6ea94abead60f433d59589ca" style="width: 100.0%; height: 100.0%;">Jackson<br>Lines: Blue<br>Total Rides: 2,097,118</div>`)[0];
+            popup_fe031d97cfa4454b97af459d0f1d4823.setContent(html_0064dcad6ea94abead60f433d59589ca);
+        
+
+        circle_marker_7702344acfae450fa3df4496126cb8dc.bindPopup(popup_fe031d97cfa4454b97af459d0f1d4823)
+        ;
+
+        
+    
+    
+            var circle_marker_8d35ba3ee5624c43a54411b869ef6435 = L.circleMarker(
+                [41.853964, -87.705408],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.296622437126014, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_1028194f3cd3425c99d04fd10fb1dba4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3698160eda304b788c31ed91bec844ed = $(`<div id="html_3698160eda304b788c31ed91bec844ed" style="width: 100.0%; height: 100.0%;">Kedzie<br>Lines: Pink<br>Total Rides: 506,508</div>`)[0];
+            popup_1028194f3cd3425c99d04fd10fb1dba4.setContent(html_3698160eda304b788c31ed91bec844ed);
+        
+
+        circle_marker_8d35ba3ee5624c43a54411b869ef6435.bindPopup(popup_1028194f3cd3425c99d04fd10fb1dba4)
+        ;
+
+        
+    
+    
+            var circle_marker_5ce80424941e4f879e1f4577c2ce3640 = L.circleMarker(
+                [41.880703, -87.629378],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6963243021524668, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b57ecd3046ad4c4e8a507edd51c0e72a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_717e51f4c40b46d584b3cd9bfbcc21a6 = $(`<div id="html_717e51f4c40b46d584b3cd9bfbcc21a6" style="width: 100.0%; height: 100.0%;">Monroe<br>Lines: Blue<br>Total Rides: 2,032,285</div>`)[0];
+            popup_b57ecd3046ad4c4e8a507edd51c0e72a.setContent(html_717e51f4c40b46d584b3cd9bfbcc21a6);
+        
+
+        circle_marker_5ce80424941e4f879e1f4577c2ce3640.bindPopup(popup_b57ecd3046ad4c4e8a507edd51c0e72a)
+        ;
+
+        
+    
+    
+            var circle_marker_0cf1b94d2b1e459a92cbb049d50be04f = L.circleMarker(
+                [41.966115, -87.6941],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.4053986084727832, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_bd25a78d456b4c3ca3a055b8c401b9f0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e32af1a3153247cdb3428d52bc59b4b4 = $(`<div id="html_e32af1a3153247cdb3428d52bc59b4b4" style="width: 100.0%; height: 100.0%;">Rockwell<br>Lines: Brown<br>Total Rides: 575,670</div>`)[0];
+            popup_bd25a78d456b4c3ca3a055b8c401b9f0.setContent(html_e32af1a3153247cdb3428d52bc59b4b4);
+        
+
+        circle_marker_0cf1b94d2b1e459a92cbb049d50be04f.bindPopup(popup_bd25a78d456b4c3ca3a055b8c401b9f0)
+        ;
+
+        
+    
+    
+            var circle_marker_7f52322c18614c618d11bf62683c6d41 = L.circleMarker(
+                [41.854517, -87.675975],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.5745378325983763, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_469d8b27d6cf43beac56dc452a45d59e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5dbed7fb9cb74ad9b3f97df97bb2f039 = $(`<div id="html_5dbed7fb9cb74ad9b3f97df97bb2f039" style="width: 100.0%; height: 100.0%;">Damen<br>Lines: Pink<br>Total Rides: 683,212</div>`)[0];
+            popup_469d8b27d6cf43beac56dc452a45d59e.setContent(html_5dbed7fb9cb74ad9b3f97df97bb2f039);
+        
+
+        circle_marker_7f52322c18614c618d11bf62683c6d41.bindPopup(popup_469d8b27d6cf43beac56dc452a45d59e)
+        ;
+
+        
+    
+    
+            var circle_marker_094e37379a524c48a8adc75bec13b1a9 = L.circleMarker(
+                [41.873797, -87.725663],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1341108811716032, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_4609ef645a4d4d45b5bd1e242ebf0f61 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5a4b6d4ef95a46e7b8f4829f69615de4 = $(`<div id="html_5a4b6d4ef95a46e7b8f4829f69615de4" style="width: 100.0%; height: 100.0%;">Pulaski<br>Lines: Blue<br>Total Rides: 403,180</div>`)[0];
+            popup_4609ef645a4d4d45b5bd1e242ebf0f61.setContent(html_5a4b6d4ef95a46e7b8f4829f69615de4);
+        
+
+        circle_marker_094e37379a524c48a8adc75bec13b1a9.bindPopup(popup_4609ef645a4d4d45b5bd1e242ebf0f61)
+        ;
+
+        
+    
+    
+            var circle_marker_4c857f421859488e81fd8fb70a290d0f = L.circleMarker(
+                [41.886848, -87.803176],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4431068004530845, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_215aeffc28d141bdaaffb01e40f61221 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d35f3d9b601947d1af8302b6e4f2a444 = $(`<div id="html_d35f3d9b601947d1af8302b6e4f2a444" style="width: 100.0%; height: 100.0%;">Harlem/Lake<br>Lines: Green<br>Total Rides: 1,235,465</div>`)[0];
+            popup_215aeffc28d141bdaaffb01e40f61221.setContent(html_d35f3d9b601947d1af8302b6e4f2a444);
+        
+
+        circle_marker_4c857f421859488e81fd8fb70a290d0f.bindPopup(popup_215aeffc28d141bdaaffb01e40f61221)
+        ;
+
+        
+    
+    
+            var circle_marker_be7606aeaa854103a0bbc4fcc4935bb2 = L.circleMarker(
+                [41.88322, -87.626189],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.813520789079414, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_eb4e4a551f22409aa3446803e32b07f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_de33e669872545fd8f6cac2184f15606 = $(`<div id="html_de33e669872545fd8f6cac2184f15606" style="width: 100.0%; height: 100.0%;">Washington/Wabash<br>Lines: Green, Purple_Express, Pink, Orange<br>Total Rides: 4,014,259</div>`)[0];
+            popup_eb4e4a551f22409aa3446803e32b07f8.setContent(html_de33e669872545fd8f6cac2184f15606);
+        
+
+        circle_marker_be7606aeaa854103a0bbc4fcc4935bb2.bindPopup(popup_eb4e4a551f22409aa3446803e32b07f8)
+        ;
+
+        
+    
+    
+            var circle_marker_5374e5492c094ff9a85b6fb3ba5eb082 = L.circleMarker(
+                [41.88422, -87.696234],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1683706096416686, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_6880f4389a84404b9196e21f4893eccd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_961557e652a84ca1972b051f93853e52 = $(`<div id="html_961557e652a84ca1972b051f93853e52" style="width: 100.0%; height: 100.0%;">California<br>Lines: Green<br>Total Rides: 424,963</div>`)[0];
+            popup_6880f4389a84404b9196e21f4893eccd.setContent(html_961557e652a84ca1972b051f93853e52);
+        
+
+        circle_marker_5374e5492c094ff9a85b6fb3ba5eb082.bindPopup(popup_6880f4389a84404b9196e21f4893eccd)
+        ;
+
+        
+    
+    
+            var circle_marker_7cef959db651434187b86efcc3643e35 = L.circleMarker(
+                [42.008362, -87.665909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.9345073459538984, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_4075bd3d96054a83ade296399fd5202b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c2145dbbeeda465f97826fed2d622883 = $(`<div id="html_c2145dbbeeda465f97826fed2d622883" style="width: 100.0%; height: 100.0%;">Morse<br>Lines: Red<br>Total Rides: 1,547,907</div>`)[0];
+            popup_4075bd3d96054a83ade296399fd5202b.setContent(html_c2145dbbeeda465f97826fed2d622883);
+        
+
+        circle_marker_7cef959db651434187b86efcc3643e35.bindPopup(popup_4075bd3d96054a83ade296399fd5202b)
+        ;
+
+        
+    
+    
+            var circle_marker_3c6df8e1e5304cd1be6146a93a7a7e42 = L.circleMarker(
+                [41.804546, -87.684019],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.7039497379287263, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_86d792aa5235432597e0b56f5180e3b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2b99c4762fc6480482d7d2a1abbb143f = $(`<div id="html_2b99c4762fc6480482d7d2a1abbb143f" style="width: 100.0%; height: 100.0%;">Western<br>Lines: Orange<br>Total Rides: 1,401,314</div>`)[0];
+            popup_86d792aa5235432597e0b56f5180e3b4.setContent(html_2b99c4762fc6480482d7d2a1abbb143f);
+        
+
+        circle_marker_3c6df8e1e5304cd1be6146a93a7a7e42.bindPopup(popup_86d792aa5235432597e0b56f5180e3b4)
+        ;
+
+        
+    
+    
+            var circle_marker_4d9f894458e84fcbac1de608406d3e60 = L.circleMarker(
+                [41.891189, -87.647578],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4535972007145426, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d82cefba13f14378b1fd3d538258c4b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31ed531b016a43c185f0947f4931a97c = $(`<div id="html_31ed531b016a43c185f0947f4931a97c" style="width: 100.0%; height: 100.0%;">Grand<br>Lines: Blue<br>Total Rides: 1,242,135</div>`)[0];
+            popup_d82cefba13f14378b1fd3d538258c4b4.setContent(html_31ed531b016a43c185f0947f4931a97c);
+        
+
+        circle_marker_4d9f894458e84fcbac1de608406d3e60.bindPopup(popup_d82cefba13f14378b1fd3d538258c4b4)
+        ;
+
+        
+    
+    
+            var circle_marker_e10a0b3049b6487c88370e4a82d77214 = L.circleMarker(
+                [41.903355, -87.666496],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.97937480359989, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_72547b9371a04eb4ac74c6bcd85c44e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3818343f93134abdae6232db4ec86906 = $(`<div id="html_3818343f93134abdae6232db4ec86906" style="width: 100.0%; height: 100.0%;">Division<br>Lines: Blue<br>Total Rides: 2,212,254</div>`)[0];
+            popup_72547b9371a04eb4ac74c6bcd85c44e5.setContent(html_3818343f93134abdae6232db4ec86906);
+        
+
+        circle_marker_e10a0b3049b6487c88370e4a82d77214.bindPopup(popup_72547b9371a04eb4ac74c6bcd85c44e5)
+        ;
+
+        
+    
+    
+            var circle_marker_60de89181d584c46b0b3d50aebec5a91 = L.circleMarker(
+                [41.799756, -87.724493],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.311713514875451, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9f3afd58e636480f8f473ec26514ec95 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5e6ae538a0b74cf899b2c8158710f5b2 = $(`<div id="html_5e6ae538a0b74cf899b2c8158710f5b2" style="width: 100.0%; height: 100.0%;">Pulaski<br>Lines: Orange<br>Total Rides: 1,787,742</div>`)[0];
+            popup_9f3afd58e636480f8f473ec26514ec95.setContent(html_5e6ae538a0b74cf899b2c8158710f5b2);
+        
+
+        circle_marker_60de89181d584c46b0b3d50aebec5a91.bindPopup(popup_9f3afd58e636480f8f473ec26514ec95)
+        ;
+
+        
+    
+    
+            var circle_marker_0c43c31bb105464eb2cda78876bd1791 = L.circleMarker(
+                [41.953775, -87.654929],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0406837224532626, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9a1d6dbd683c4533b0ab60d883b4bdc7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_99ba0b2ef98f47caafc8e3c827821690 = $(`<div id="html_99ba0b2ef98f47caafc8e3c827821690" style="width: 100.0%; height: 100.0%;">Sheridan<br>Lines: <br>Total Rides: 1,615,416</div>`)[0];
+            popup_9a1d6dbd683c4533b0ab60d883b4bdc7.setContent(html_99ba0b2ef98f47caafc8e3c827821690);
+        
+
+        circle_marker_0c43c31bb105464eb2cda78876bd1791.bindPopup(popup_9a1d6dbd683c4533b0ab60d883b4bdc7)
+        ;
+
+        
+    
+    
+            var circle_marker_97af6c1057574f3893051db67ca9798c = L.circleMarker(
+                [41.896075, -87.655214],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.791476164458021, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_554049d5f00e47148ab9adee4dc53c21 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fada28740d8346ff9c78256463dbd2c5 = $(`<div id="html_fada28740d8346ff9c78256463dbd2c5" style="width: 100.0%; height: 100.0%;">Chicago<br>Lines: Blue<br>Total Rides: 1,456,965</div>`)[0];
+            popup_554049d5f00e47148ab9adee4dc53c21.setContent(html_fada28740d8346ff9c78256463dbd2c5);
+        
+
+        circle_marker_97af6c1057574f3893051db67ca9798c.bindPopup(popup_554049d5f00e47148ab9adee4dc53c21)
+        ;
+
+        
+    
+    
+            var circle_marker_aa3d45344aca4f87bc354cf495e699ce = L.circleMarker(
+                [41.888969, -87.633924],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.035274324753224, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_dad5ca5f4a914fff83de4eacbedbc526 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_04f9d392d69d4f53ae2d999372bdc9b9 = $(`<div id="html_04f9d392d69d4f53ae2d999372bdc9b9" style="width: 100.0%; height: 100.0%;">Merchandise Mart<br>Lines: Brown, Purple_Express<br>Total Rides: 2,247,796</div>`)[0];
+            popup_dad5ca5f4a914fff83de4eacbedbc526.setContent(html_04f9d392d69d4f53ae2d999372bdc9b9);
+        
+
+        circle_marker_aa3d45344aca4f87bc354cf495e699ce.bindPopup(popup_dad5ca5f4a914fff83de4eacbedbc526)
+        ;
+
+        
+    
+    
+            var circle_marker_d1130acca2884a84a22a2542f4ebaad3 = L.circleMarker(
+                [41.97766526, -87.90422307],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.608103653333007, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_00648e7459e049bdbd9346f49befaecc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_35b10664953e4ec9b3db4261840b9e9a = $(`<div id="html_35b10664953e4ec9b3db4261840b9e9a" style="width: 100.0%; height: 100.0%;">O'Hare<br>Lines: Blue<br>Total Rides: 5,791,109</div>`)[0];
+            popup_00648e7459e049bdbd9346f49befaecc.setContent(html_35b10664953e4ec9b3db4261840b9e9a);
+        
+
+        circle_marker_d1130acca2884a84a22a2542f4ebaad3.bindPopup(popup_00648e7459e049bdbd9346f49befaecc)
+        ;
+
+        
+    
+    
+            var circle_marker_a5e30df1cb8a4564912620cd935a1af9 = L.circleMarker(
+                [41.816462, -87.619021],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9986258676599047, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9563cddc87184a528b6b5ed7bae57c50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_97df47f5449b46fcafa0334dd245102a = $(`<div id="html_97df47f5449b46fcafa0334dd245102a" style="width: 100.0%; height: 100.0%;">43rd<br>Lines: Green<br>Total Rides: 317,036</div>`)[0];
+            popup_9563cddc87184a528b6b5ed7bae57c50.setContent(html_97df47f5449b46fcafa0334dd245102a);
+        
+
+        circle_marker_a5e30df1cb8a4564912620cd935a1af9.bindPopup(popup_9563cddc87184a528b6b5ed7bae57c50)
+        ;
+
+        
+    
+    
+            var circle_marker_90d96bb09c554fd2aff82c462896f6ae = L.circleMarker(
+                [41.831191, -87.630636],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.7527135850211555, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_3f27c3132893416cb927321b799baa9e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31b536b922fb49b5a4865f2715526a62 = $(`<div id="html_31b536b922fb49b5a4865f2715526a62" style="width: 100.0%; height: 100.0%;">Sox-35th<br>Lines: Red<br>Total Rides: 1,432,319</div>`)[0];
+            popup_3f27c3132893416cb927321b799baa9e.setContent(html_31b536b922fb49b5a4865f2715526a62);
+        
+
+        circle_marker_90d96bb09c554fd2aff82c462896f6ae.bindPopup(popup_3f27c3132893416cb927321b799baa9e)
+        ;
+
+        
+    
+    
+            var circle_marker_510645de54c6412abf8d855bf7c3fc5e = L.circleMarker(
+                [41.929728, -87.708541],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.4087860483653065, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_08263066db06467eae20087f508c0f50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a295f4e7df034cf5ba7b2cff3407bdbc = $(`<div id="html_a295f4e7df034cf5ba7b2cff3407bdbc" style="width: 100.0%; height: 100.0%;">Logan Square<br>Lines: Blue<br>Total Rides: 2,485,282</div>`)[0];
+            popup_08263066db06467eae20087f508c0f50.setContent(html_a295f4e7df034cf5ba7b2cff3407bdbc);
+        
+
+        circle_marker_510645de54c6412abf8d855bf7c3fc5e.bindPopup(popup_08263066db06467eae20087f508c0f50)
+        ;
+
+        
+    
+    
+            var circle_marker_478e7eddd8f843829b40a276886a7224 = L.circleMarker(
+                [41.909744, -87.677437],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.084348008255175, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c9e1535699b84397b8e2686e348ec6dd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_45b916f8571a4d1f93df1e0e9a3603e3 = $(`<div id="html_45b916f8571a4d1f93df1e0e9a3603e3" style="width: 100.0%; height: 100.0%;">Damen<br>Lines: Blue<br>Total Rides: 2,278,998</div>`)[0];
+            popup_c9e1535699b84397b8e2686e348ec6dd.setContent(html_45b916f8571a4d1f93df1e0e9a3603e3);
+        
+
+        circle_marker_478e7eddd8f843829b40a276886a7224.bindPopup(popup_c9e1535699b84397b8e2686e348ec6dd)
+        ;
+
+        
+    
+    
+            var circle_marker_4cc30576d44f46929d87fde4db7cc04c = L.circleMarker(
+                [41.885269, -87.666969],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.3233951339012306, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_cfe9ef4534594fca90d2eba72b1071ed = L.popup({"maxWidth": "100%"});
+
+        
+            var html_536b4de911c14a16857cd57ed87dad49 = $(`<div id="html_536b4de911c14a16857cd57ed87dad49" style="width: 100.0%; height: 100.0%;">Ashland<br>Lines: Green, Pink<br>Total Rides: 1,159,350</div>`)[0];
+            popup_cfe9ef4534594fca90d2eba72b1071ed.setContent(html_536b4de911c14a16857cd57ed87dad49);
+        
+
+        circle_marker_4cc30576d44f46929d87fde4db7cc04c.bindPopup(popup_cfe9ef4534594fca90d2eba72b1071ed)
+        ;
+
+        
+    
+    
+            var circle_marker_94c2af11fcfb48b48f73ad2f661047bc = L.circleMarker(
+                [41.952925, -87.729229],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.882961262270387, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e533894522fd44fb867cea4458553d68 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_11a9a39a9bcd4ac3a53fac50245caf2f = $(`<div id="html_11a9a39a9bcd4ac3a53fac50245caf2f" style="width: 100.0%; height: 100.0%;">Irving Park<br>Lines: Blue<br>Total Rides: 1,515,133</div>`)[0];
+            popup_e533894522fd44fb867cea4458553d68.setContent(html_11a9a39a9bcd4ac3a53fac50245caf2f);
+        
+
+        circle_marker_94c2af11fcfb48b48f73ad2f661047bc.bindPopup(popup_e533894522fd44fb867cea4458553d68)
+        ;
+
+        
+    
+    
+            var circle_marker_671d3a4b0e0847cebb200b144fa0edd0 = L.circleMarker(
+                [41.964273, -87.657588],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.712176602349661, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d0b52d56ae2d47d498dd8608b6e6aa87 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a6e7cb34e28049519ea634a1452d7ab4 = $(`<div id="html_a6e7cb34e28049519ea634a1452d7ab4" style="width: 100.0%; height: 100.0%;">Wilson<br>Lines: Purple_Express<br>Total Rides: 3,314,003</div>`)[0];
+            popup_d0b52d56ae2d47d498dd8608b6e6aa87.setContent(html_a6e7cb34e28049519ea634a1452d7ab4);
+        
+
+        circle_marker_671d3a4b0e0847cebb200b144fa0edd0.bindPopup(popup_d0b52d56ae2d47d498dd8608b6e6aa87)
+        ;
+
+        
+    
+    
+            var circle_marker_726cc3d38ac5438b8bbd0d16832ce348 = L.circleMarker(
+                [41.853206, -87.630968],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.791999268974806, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_dbb96690a7014eaab9180aa5c6fde9ec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b80097fe9eeb455298968478a22b138c = $(`<div id="html_b80097fe9eeb455298968478a22b138c" style="width: 100.0%; height: 100.0%;">Cermak-Chinatown<br>Lines: Red<br>Total Rides: 2,093,117</div>`)[0];
+            popup_dbb96690a7014eaab9180aa5c6fde9ec.setContent(html_b80097fe9eeb455298968478a22b138c);
+        
+
+        circle_marker_726cc3d38ac5438b8bbd0d16832ce348.bindPopup(popup_dbb96690a7014eaab9180aa5c6fde9ec)
+        ;
+
+        
+    
+    
+            var circle_marker_174f4845741b40d09f75a573ce86a85c = L.circleMarker(
+                [41.875568, -87.631722],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.075283799141706, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f8e55aae8d4e4215bf71977344902a91 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c78afd20fa42498fbe538025175fad7f = $(`<div id="html_c78afd20fa42498fbe538025175fad7f" style="width: 100.0%; height: 100.0%;">LaSalle<br>Lines: Blue<br>Total Rides: 1,001,596</div>`)[0];
+            popup_f8e55aae8d4e4215bf71977344902a91.setContent(html_c78afd20fa42498fbe538025175fad7f);
+        
+
+        circle_marker_174f4845741b40d09f75a573ce86a85c.bindPopup(popup_f8e55aae8d4e4215bf71977344902a91)
+        ;
+
+        
+    
+    
+            var circle_marker_ad81e7f75d0b4669b27c2a148b45b013 = L.circleMarker(
+                [41.990259, -87.659076],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.270293577075503, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d6ddb5e86c6e4e71a106e4158bb2febe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e65baed69fa04f929f4531551536a318 = $(`<div id="html_e65baed69fa04f929f4531551536a318" style="width: 100.0%; height: 100.0%;">Thorndale<br>Lines: Red<br>Total Rides: 1,125,587</div>`)[0];
+            popup_d6ddb5e86c6e4e71a106e4158bb2febe.setContent(html_e65baed69fa04f929f4531551536a318);
+        
+
+        circle_marker_ad81e7f75d0b4669b27c2a148b45b013.bindPopup(popup_d6ddb5e86c6e4e71a106e4158bb2febe)
+        ;
+
+        
+    
+    
+            var circle_marker_43cfe2e9a3e4477e8681712e70b5fdb9 = L.circleMarker(
+                [41.993664, -87.659202],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.7388841862956683, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_06efea1d7cfd401fbc3e622d6a08fc07 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0165976d716e4a72a40113bb30b62132 = $(`<div id="html_0165976d716e4a72a40113bb30b62132" style="width: 100.0%; height: 100.0%;">Granville<br>Lines: Red<br>Total Rides: 1,423,526</div>`)[0];
+            popup_06efea1d7cfd401fbc3e622d6a08fc07.setContent(html_0165976d716e4a72a40113bb30b62132);
+        
+
+        circle_marker_43cfe2e9a3e4477e8681712e70b5fdb9.bindPopup(popup_06efea1d7cfd401fbc3e622d6a08fc07)
+        ;
+
+        
+    
+    
+            var circle_marker_651ef0b9cf2940ca9f8beb0ec0eac06c = L.circleMarker(
+                [41.947428, -87.653626],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.267233588657408, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_3a4a04d8a7064467b47234bb6347463d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_572c23ab10904482bbbb20054c64ee3c = $(`<div id="html_572c23ab10904482bbbb20054c64ee3c" style="width: 100.0%; height: 100.0%;">Addison<br>Lines: Red<br>Total Rides: 3,666,919</div>`)[0];
+            popup_3a4a04d8a7064467b47234bb6347463d.setContent(html_572c23ab10904482bbbb20054c64ee3c);
+        
+
+        circle_marker_651ef0b9cf2940ca9f8beb0ec0eac06c.bindPopup(popup_3a4a04d8a7064467b47234bb6347463d)
+        ;
+
+        
+    
+    
+            var circle_marker_dc7a62b3169b45eda1d7a4390e06ad65 = L.circleMarker(
+                [41.887389, -87.76565],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.6631290268903403, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f0e15690868d4cb9af1912cfb72c0725 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2c185a67d3ff4f8aa2599ea2a3341b08 = $(`<div id="html_2c185a67d3ff4f8aa2599ea2a3341b08" style="width: 100.0%; height: 100.0%;">Central<br>Lines: Green<br>Total Rides: 739,540</div>`)[0];
+            popup_f0e15690868d4cb9af1912cfb72c0725.setContent(html_2c185a67d3ff4f8aa2599ea2a3341b08);
+        
+
+        circle_marker_dc7a62b3169b45eda1d7a4390e06ad65.bindPopup(popup_f0e15690868d4cb9af1912cfb72c0725)
+        ;
+
+        
+    
+    
+            var circle_marker_12ac43e9fc3c453ba21d8fbed6243c4b = L.circleMarker(
+                [41.884904, -87.716523],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0686693422692042, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_19d57c2ace6d4ec9997858d0b8401337 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_878df48f0c7e43e381ef663d7878b672 = $(`<div id="html_878df48f0c7e43e381ef663d7878b672" style="width: 100.0%; height: 100.0%;">Conservatory<br>Lines: Green<br>Total Rides: 361,571</div>`)[0];
+            popup_19d57c2ace6d4ec9997858d0b8401337.setContent(html_878df48f0c7e43e381ef663d7878b672);
+        
+
+        circle_marker_12ac43e9fc3c453ba21d8fbed6243c4b.bindPopup(popup_19d57c2ace6d4ec9997858d0b8401337)
+        ;
+
+        
+    
+    
+            var circle_marker_49204b9ea8e843579e89ca821aa97228 = L.circleMarker(
+                [42.058282, -87.683337],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9827439993180453, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b72571cb369e4ab989dd06b6265ebc8c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_227c0972b8d4442f957f0c6d5850a076 = $(`<div id="html_227c0972b8d4442f957f0c6d5850a076" style="width: 100.0%; height: 100.0%;">Noyes<br>Lines: Purple, Purple_Express<br>Total Rides: 306,938</div>`)[0];
+            popup_b72571cb369e4ab989dd06b6265ebc8c.setContent(html_227c0972b8d4442f957f0c6d5850a076);
+        
+
+        circle_marker_49204b9ea8e843579e89ca821aa97228.bindPopup(popup_b72571cb369e4ab989dd06b6265ebc8c)
+        ;
+
+        
+    
+    
+            var circle_marker_6b04e8ba0ff54b88a7c189aa96d09af4 = L.circleMarker(
+                [41.809209, -87.618826],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0410388547439728, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9121d7c6253d432f9b55a8e9dae86a3b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e431256294d448a381c08769bfd96dba = $(`<div id="html_e431256294d448a381c08769bfd96dba" style="width: 100.0%; height: 100.0%;">47th<br>Lines: Green<br>Total Rides: 344,003</div>`)[0];
+            popup_9121d7c6253d432f9b55a8e9dae86a3b.setContent(html_e431256294d448a381c08769bfd96dba);
+        
+
+        circle_marker_6b04e8ba0ff54b88a7c189aa96d09af4.bindPopup(popup_9121d7c6253d432f9b55a8e9dae86a3b)
+        ;
+
+        
+    
+    
+            var circle_marker_108d924f450b416887a671043c1e1907 = L.circleMarker(
+                [42.015876, -87.669092],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.492802358657191, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_35d89ec0c1284206840d187b250d87e7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c4a0a0ddd08458b8a8aaf3604710162 = $(`<div id="html_7c4a0a0ddd08458b8a8aaf3604710162" style="width: 100.0%; height: 100.0%;">Jarvis<br>Lines: Red<br>Total Rides: 631,243</div>`)[0];
+            popup_35d89ec0c1284206840d187b250d87e7.setContent(html_7c4a0a0ddd08458b8a8aaf3604710162);
+        
+
+        circle_marker_108d924f450b416887a671043c1e1907.bindPopup(popup_35d89ec0c1284206840d187b250d87e7)
+        ;
+
+        
+    
+    
+            var circle_marker_828089e6e0f2497d9261697cdfaa8692 = L.circleMarker(
+                [41.84678, -87.648088],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.064444243129417, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_263fbed14c52476f92072ced5ec90ec3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_780250bebacf494899515206046cd49d = $(`<div id="html_780250bebacf494899515206046cd49d" style="width: 100.0%; height: 100.0%;">Halsted<br>Lines: Orange<br>Total Rides: 994,704</div>`)[0];
+            popup_263fbed14c52476f92072ced5ec90ec3.setContent(html_780250bebacf494899515206046cd49d);
+        
+
+        circle_marker_828089e6e0f2497d9261697cdfaa8692.bindPopup(popup_263fbed14c52476f92072ced5ec90ec3)
+        ;
+
+        
+    
+    
+            var circle_marker_edf5a7519cde485e9aba30f97b649405 = L.circleMarker(
+                [42.04771, -87.683543],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1594869549434947, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_2a1d48e4d9774d9cb1ac2482af96f576 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8993317242dc4802bda2ecf964497fb9 = $(`<div id="html_8993317242dc4802bda2ecf964497fb9" style="width: 100.0%; height: 100.0%;">Davis<br>Lines: Purple, Purple_Express<br>Total Rides: 1,055,134</div>`)[0];
+            popup_2a1d48e4d9774d9cb1ac2482af96f576.setContent(html_8993317242dc4802bda2ecf964497fb9);
+        
+
+        circle_marker_edf5a7519cde485e9aba30f97b649405.bindPopup(popup_2a1d48e4d9774d9cb1ac2482af96f576)
+        ;
+
+        
+    
+    
+            var circle_marker_6fc4f6bd38ef4356b63facf9ec9bda72 = L.circleMarker(
+                [41.89681, -87.635924],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.208079684262543, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f1beb09946e646d6b5bc16faf2961fc3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7d46f1a7eb2c4b48a068586681ac262f = $(`<div id="html_7d46f1a7eb2c4b48a068586681ac262f" style="width: 100.0%; height: 100.0%;">Chicago<br>Lines: Brown, Purple_Express<br>Total Rides: 2,357,669</div>`)[0];
+            popup_f1beb09946e646d6b5bc16faf2961fc3.setContent(html_7d46f1a7eb2c4b48a068586681ac262f);
+        
+
+        circle_marker_6fc4f6bd38ef4356b63facf9ec9bda72.bindPopup(popup_f1beb09946e646d6b5bc16faf2961fc3)
+        ;
+
+        
+    
+    
+            var circle_marker_2c5e851ce9df4cb5890de31ab70aa9a1 = L.circleMarker(
+                [41.880745, -87.627696],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.222981714618962, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_945c8fd50274494db06b11c400f2db67 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3d6e5679156f4433acacfd712110185a = $(`<div id="html_3d6e5679156f4433acacfd712110185a" style="width: 100.0%; height: 100.0%;">Monroe<br>Lines: Red<br>Total Rides: 2,367,144</div>`)[0];
+            popup_945c8fd50274494db06b11c400f2db67.setContent(html_3d6e5679156f4433acacfd712110185a);
+        
+
+        circle_marker_2c5e851ce9df4cb5890de31ab70aa9a1.bindPopup(popup_945c8fd50274494db06b11c400f2db67)
+        ;
+
+        
+    
+    
+            var circle_marker_e6340c72d1224cfa9af8c29bd53b21e0 = L.circleMarker(
+                [41.965996, -87.708821],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.7417236718476976, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_12d09b5ba130491aad1b73b6e6278932 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c90d0a40c83042a3a1674afe98779d0f = $(`<div id="html_c90d0a40c83042a3a1674afe98779d0f" style="width: 100.0%; height: 100.0%;">Kedzie<br>Lines: Brown<br>Total Rides: 789,512</div>`)[0];
+            popup_12d09b5ba130491aad1b73b6e6278932.setContent(html_c90d0a40c83042a3a1674afe98779d0f);
+        
+
+        circle_marker_e6340c72d1224cfa9af8c29bd53b21e0.bindPopup(popup_12d09b5ba130491aad1b73b6e6278932)
+        ;
+
+        
+    
+    
+            var circle_marker_afc65fe714ec4f46a3c2b03c15fe4207 = L.circleMarker(
+                [41.80209, -87.618487],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0026962058722964, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f8eb381f84c148bd8f7ac525c509a899 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_62e98d57f5ba49a09ddde8d3e34b8e0f = $(`<div id="html_62e98d57f5ba49a09ddde8d3e34b8e0f" style="width: 100.0%; height: 100.0%;">51st<br>Lines: Green<br>Total Rides: 319,624</div>`)[0];
+            popup_f8eb381f84c148bd8f7ac525c509a899.setContent(html_62e98d57f5ba49a09ddde8d3e34b8e0f);
+        
+
+        circle_marker_afc65fe714ec4f46a3c2b03c15fe4207.bindPopup(popup_f8eb381f84c148bd8f7ac525c509a899)
+        ;
+
+        
+    
+    
+            var circle_marker_78e8eb831112438cb4de963d95de4148 = L.circleMarker(
+                [41.795172, -87.618327],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1451375972485267, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b063e42992e54801bc4cbcb517c0e26f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_db8962fa837c4adcaf89f5b95226fb77 = $(`<div id="html_db8962fa837c4adcaf89f5b95226fb77" style="width: 100.0%; height: 100.0%;">Garfield<br>Lines: Green<br>Total Rides: 410,191</div>`)[0];
+            popup_b063e42992e54801bc4cbcb517c0e26f.setContent(html_db8962fa837c4adcaf89f5b95226fb77);
+        
+
+        circle_marker_78e8eb831112438cb4de963d95de4148.bindPopup(popup_b063e42992e54801bc4cbcb517c0e26f)
+        ;
+
+        
+    
+    
+            var circle_marker_6e216a19a91e405a80456272a205e41e = L.circleMarker(
+                [41.839234, -87.665317],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.5619855260786317, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_4bb3132b840043d9b81a896ecbacc06d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c2f915aede44a6985f8f0f09cab42fe = $(`<div id="html_7c2f915aede44a6985f8f0f09cab42fe" style="width: 100.0%; height: 100.0%;">Ashland<br>Lines: Orange<br>Total Rides: 675,231</div>`)[0];
+            popup_4bb3132b840043d9b81a896ecbacc06d.setContent(html_7c2f915aede44a6985f8f0f09cab42fe);
+        
+
+        circle_marker_6e216a19a91e405a80456272a205e41e.bindPopup(popup_4bb3132b840043d9b81a896ecbacc06d)
+        ;
+
+        
+    
+    
+            var circle_marker_c4ecc269d41b4294b586748338f708e1 = L.circleMarker(
+                [41.891665, -87.628021],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.975928541972768, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_160256485e224eefb80fc252f0ae33e4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c27fc7ee2d44593966f49df992bdfc4 = $(`<div id="html_6c27fc7ee2d44593966f49df992bdfc4" style="width: 100.0%; height: 100.0%;">Grand<br>Lines: Red<br>Total Rides: 4,117,521</div>`)[0];
+            popup_160256485e224eefb80fc252f0ae33e4.setContent(html_6c27fc7ee2d44593966f49df992bdfc4);
+        
+
+        circle_marker_c4ecc269d41b4294b586748338f708e1.bindPopup(popup_160256485e224eefb80fc252f0ae33e4)
+        ;
+
+        
+    
+    
+            var circle_marker_9857cefefcb54858ae1e4aa07584d170 = L.circleMarker(
+                [41.853115, -87.626402],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.7686605661922237, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_0b5d06e985d24bf39706d6223d119dcb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3bcf9d4c5a294ad5af44ccc7becc107d = $(`<div id="html_3bcf9d4c5a294ad5af44ccc7becc107d" style="width: 100.0%; height: 100.0%;">Cermak-McCormick Place<br>Lines: Green<br>Total Rides: 806,639</div>`)[0];
+            popup_0b5d06e985d24bf39706d6223d119dcb.setContent(html_3bcf9d4c5a294ad5af44ccc7becc107d);
+        
+
+        circle_marker_9857cefefcb54858ae1e4aa07584d170.bindPopup(popup_0b5d06e985d24bf39706d6223d119dcb)
+        ;
+
+        
+    
+    
+            var circle_marker_1ecbc782966a4180b0b9483ccd9b7e73 = L.circleMarker(
+                [41.871551, -87.66953],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.463255603713885, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f4196c503a824b1cb61c46a9b609d709 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4fc33c4006044744b2b6cf05e843f3a9 = $(`<div id="html_4fc33c4006044744b2b6cf05e843f3a9" style="width: 100.0%; height: 100.0%;">Polk<br>Lines: Pink<br>Total Rides: 1,248,276</div>`)[0];
+            popup_f4196c503a824b1cb61c46a9b609d709.setContent(html_4fc33c4006044744b2b6cf05e843f3a9);
+        
+
+        circle_marker_1ecbc782966a4180b0b9483ccd9b7e73.bindPopup(popup_f4196c503a824b1cb61c46a9b609d709)
+        ;
+
+        
+    
+    
+            var circle_marker_0ccc755e70e84ea1af7e9740974c1848 = L.circleMarker(
+                [41.966286, -87.678639],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.98072235606526, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_2070804ed0fa40b49be1d5ef230ed0b3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_912f0c5c4d914195b31b5141adcb0e29 = $(`<div id="html_912f0c5c4d914195b31b5141adcb0e29" style="width: 100.0%; height: 100.0%;">Damen<br>Lines: Brown<br>Total Rides: 941,472</div>`)[0];
+            popup_2070804ed0fa40b49be1d5ef230ed0b3.setContent(html_912f0c5c4d914195b31b5141adcb0e29);
+        
+
+        circle_marker_0ccc755e70e84ea1af7e9740974c1848.bindPopup(popup_2070804ed0fa40b49be1d5ef230ed0b3)
+        ;
+
+        
+    
+    
+            var circle_marker_8daf6c93b50f45f4bc686a9d6eab81af = L.circleMarker(
+                [41.853732, -87.724311],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.225089545867899, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f6b9d0016225441688ae97c40b364d36 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cf048fa7ded46dca3870f1f0e4567a6 = $(`<div id="html_6cf048fa7ded46dca3870f1f0e4567a6" style="width: 100.0%; height: 100.0%;">Pulaski<br>Lines: Pink<br>Total Rides: 461,026</div>`)[0];
+            popup_f6b9d0016225441688ae97c40b364d36.setContent(html_6cf048fa7ded46dca3870f1f0e4567a6);
+        
+
+        circle_marker_8daf6c93b50f45f4bc686a9d6eab81af.bindPopup(popup_f6b9d0016225441688ae97c40b364d36)
+        ;
+
+        
+    
+    
+            var circle_marker_654626e85e6846b89d0677424b2f96fa = L.circleMarker(
+                [41.829353, -87.680622],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1158928148464797, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_fb4eb234b3414794ae412fde9803270a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c124ac04b3547d1ae8fd5503d9e2755 = $(`<div id="html_7c124ac04b3547d1ae8fd5503d9e2755" style="width: 100.0%; height: 100.0%;">35th/Archer<br>Lines: Orange<br>Total Rides: 1,027,416</div>`)[0];
+            popup_fb4eb234b3414794ae412fde9803270a.setContent(html_7c124ac04b3547d1ae8fd5503d9e2755);
+        
+
+        circle_marker_654626e85e6846b89d0677424b2f96fa.bindPopup(popup_fb4eb234b3414794ae412fde9803270a)
+        ;
+
+        
+    
+    
+            var circle_marker_9d7cd99787e449aba7a5b7107951817c = L.circleMarker(
+                [42.027612, -87.678329],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8598694849512298, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_d6f5084250334beb98278c06e0e257c2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e90d26d60573446f84241cdf145dc464 = $(`<div id="html_e90d26d60573446f84241cdf145dc464" style="width: 100.0%; height: 100.0%;">South Boulevard<br>Lines: Purple, Purple_Express<br>Total Rides: 228,812</div>`)[0];
+            popup_d6f5084250334beb98278c06e0e257c2.setContent(html_e90d26d60573446f84241cdf145dc464);
+        
+
+        circle_marker_9d7cd99787e449aba7a5b7107951817c.bindPopup(popup_d6f5084250334beb98278c06e0e257c2)
+        ;
+
+        
+    
+    
+            var circle_marker_01245d5aacbc4d03aa3ad6894a584a26 = L.circleMarker(
+                [42.033456, -87.679538],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.075889946107338, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c2a31be5af3e47248d27bcfd849fa231 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8cc21832733847afa4717c077db07234 = $(`<div id="html_8cc21832733847afa4717c077db07234" style="width: 100.0%; height: 100.0%;">Main<br>Lines: Purple, Purple_Express<br>Total Rides: 366,162</div>`)[0];
+            popup_c2a31be5af3e47248d27bcfd849fa231.setContent(html_8cc21832733847afa4717c077db07234);
+        
+
+        circle_marker_01245d5aacbc4d03aa3ad6894a584a26.bindPopup(popup_c2a31be5af3e47248d27bcfd849fa231)
+        ;
+
+        
+    
+    
+            var circle_marker_a30a1003e4b948ecbb806da06d919f36 = L.circleMarker(
+                [41.878153, -87.627596],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.348764287469052, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_ecf82f10dda6448ebdb5087a30a37e13 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f9c32310425046dfa1d7158b68f2b737 = $(`<div id="html_f9c32310425046dfa1d7158b68f2b737" style="width: 100.0%; height: 100.0%;">Jackson<br>Lines: Red<br>Total Rides: 2,447,119</div>`)[0];
+            popup_ecf82f10dda6448ebdb5087a30a37e13.setContent(html_f9c32310425046dfa1d7158b68f2b737);
+        
+
+        circle_marker_a30a1003e4b948ecbb806da06d919f36.bindPopup(popup_ecf82f10dda6448ebdb5087a30a37e13)
+        ;
+
+        
+    
+    
+            var circle_marker_e204bacba0ab41738fd413e518e995e4 = L.circleMarker(
+                [41.973453, -87.65853],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1680925432599256, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_95f6992b6d7a46ba9f7cb2bb789d565e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_097a88087a9c45acaada516011218b44 = $(`<div id="html_097a88087a9c45acaada516011218b44" style="width: 100.0%; height: 100.0%;">Argyle<br>Lines: Red<br>Total Rides: 1,696,425</div>`)[0];
+            popup_95f6992b6d7a46ba9f7cb2bb789d565e.setContent(html_097a88087a9c45acaada516011218b44);
+        
+
+        circle_marker_e204bacba0ab41738fd413e518e995e4.bindPopup(popup_95f6992b6d7a46ba9f7cb2bb789d565e)
+        ;
+
+        
+    
+    
+            var circle_marker_76a40aa749034fb48febec069633f97a = L.circleMarker(
+                [41.876862, -87.628196],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.8558434989558354, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_207336a0400f4ca3aecc7c346f2e7569 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cfefc3813862449e93b40412520d525e = $(`<div id="html_cfefc3813862449e93b40412520d525e" style="width: 100.0%; height: 100.0%;">Harold Washington Library-State/Van Buren<br>Lines: Brown<br>Total Rides: 1,497,891</div>`)[0];
+            popup_207336a0400f4ca3aecc7c346f2e7569.setContent(html_cfefc3813862449e93b40412520d525e);
+        
+
+        circle_marker_76a40aa749034fb48febec069633f97a.bindPopup(popup_207336a0400f4ca3aecc7c346f2e7569)
+        ;
+
+        
+    
+    
+            var circle_marker_bf4acc8e56e140b89ce75de6ffeb52fb = L.circleMarker(
+                [41.870851, -87.776812],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0667898777545952, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9bf349ff5d2c48c0be72335609a6b8e7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1c58c04b7a7c435385c3cf4097e9e1aa = $(`<div id="html_1c58c04b7a7c435385c3cf4097e9e1aa" style="width: 100.0%; height: 100.0%;">Austin<br>Lines: Blue<br>Total Rides: 360,376</div>`)[0];
+            popup_9bf349ff5d2c48c0be72335609a6b8e7.setContent(html_1c58c04b7a7c435385c3cf4097e9e1aa);
+        
+
+        circle_marker_bf4acc8e56e140b89ce75de6ffeb52fb.bindPopup(popup_9bf349ff5d2c48c0be72335609a6b8e7)
+        ;
+
+        
+    
+    
+            var circle_marker_bd0f4779c3df42f5987e8be5f57e092d = L.circleMarker(
+                [41.883164, -87.62944],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.2216618429698745, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c7eace2d478f400d860543d4524669ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7ee546288e6c4226873d9ad4d7fbbb47 = $(`<div id="html_7ee546288e6c4226873d9ad4d7fbbb47" style="width: 100.0%; height: 100.0%;">Washington<br>Lines: Blue<br>Total Rides: 4,273,763</div>`)[0];
+            popup_c7eace2d478f400d860543d4524669ee.setContent(html_7ee546288e6c4226873d9ad4d7fbbb47);
+        
+
+        circle_marker_bd0f4779c3df42f5987e8be5f57e092d.bindPopup(popup_c7eace2d478f400d860543d4524669ee)
+        ;
+
+        
+    
+    
+            var circle_marker_34f5595742044a94a1f673c892ed7d54 = L.circleMarker(
+                [41.874341, -87.70604],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.2943828074450072, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_4cd360f34a7f4a31b2ba340482d1f007 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_22138eebfb4144349cc8d2f4c0d7aa2b = $(`<div id="html_22138eebfb4144349cc8d2f4c0d7aa2b" style="width: 100.0%; height: 100.0%;">Kedzie-Homan<br>Lines: Blue<br>Total Rides: 505,084</div>`)[0];
+            popup_4cd360f34a7f4a31b2ba340482d1f007.setContent(html_22138eebfb4144349cc8d2f4c0d7aa2b);
+        
+
+        circle_marker_34f5595742044a94a1f673c892ed7d54.bindPopup(popup_4cd360f34a7f4a31b2ba340482d1f007)
+        ;
+
+        
+    
+    
+            var circle_marker_a5192d0b80e944b488ecf564677c6c10 = L.circleMarker(
+                [41.780536, -87.630952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.8025412562120628, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_c771b6eccfb247ffb1e3378cdb3ab731 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8700978cfbc94e4bb0c8031455397b8d = $(`<div id="html_8700978cfbc94e4bb0c8031455397b8d" style="width: 100.0%; height: 100.0%;">63rd<br>Lines: Red<br>Total Rides: 828,181</div>`)[0];
+            popup_c771b6eccfb247ffb1e3378cdb3ab731.setContent(html_8700978cfbc94e4bb0c8031455397b8d);
+        
+
+        circle_marker_a5192d0b80e944b488ecf564677c6c10.bindPopup(popup_c771b6eccfb247ffb1e3378cdb3ab731)
+        ;
+
+        
+    
+    
+            var circle_marker_7cfa61fe969247d893186d6634166dd2 = L.circleMarker(
+                [41.804236, -87.704406],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5466236167062535, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_64df72168a3f47d796a91946bad366f9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_15c0f739e5484f5786ff699fed416df5 = $(`<div id="html_15c0f739e5484f5786ff699fed416df5" style="width: 100.0%; height: 100.0%;">Kedzie<br>Lines: Orange<br>Total Rides: 1,301,283</div>`)[0];
+            popup_64df72168a3f47d796a91946bad366f9.setContent(html_15c0f739e5484f5786ff699fed416df5);
+        
+
+        circle_marker_7cfa61fe969247d893186d6634166dd2.bindPopup(popup_64df72168a3f47d796a91946bad366f9)
+        ;
+
+        
+    
+    
+            var circle_marker_e88b84cdd7064975955b2bc1de390185 = L.circleMarker(
+                [41.887163, -87.754986],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1126661124212316, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_ec2ae953fa6749ad924197d613dcdd38 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4bc3ec9520a646e2ad70b9507fc03976 = $(`<div id="html_4bc3ec9520a646e2ad70b9507fc03976" style="width: 100.0%; height: 100.0%;">Laramie<br>Lines: Green<br>Total Rides: 389,545</div>`)[0];
+            popup_ec2ae953fa6749ad924197d613dcdd38.setContent(html_4bc3ec9520a646e2ad70b9507fc03976);
+        
+
+        circle_marker_e88b84cdd7064975955b2bc1de390185.bindPopup(popup_ec2ae953fa6749ad924197d613dcdd38)
+        ;
+
+        
+    
+    
+            var circle_marker_da684a09853043a0a9ee0e9ca845207c = L.circleMarker(
+                [41.735372, -87.624717],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.212827573364386, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b22808f73e954c7f95ef6d5c9c6786f3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_277ed01de3994d7a882b2e4e3a48ccd9 = $(`<div id="html_277ed01de3994d7a882b2e4e3a48ccd9" style="width: 100.0%; height: 100.0%;">87th<br>Lines: Red<br>Total Rides: 1,089,049</div>`)[0];
+            popup_b22808f73e954c7f95ef6d5c9c6786f3.setContent(html_277ed01de3994d7a882b2e4e3a48ccd9);
+        
+
+        circle_marker_da684a09853043a0a9ee0e9ca845207c.bindPopup(popup_b22808f73e954c7f95ef6d5c9c6786f3)
+        ;
+
+        
+    
+    
+            var circle_marker_718c08504e4e40d5b375a44c488cbe0a = L.circleMarker(
+                [41.875478, -87.688436],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0552315641831627, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_9fb0cf393d834d89bf0ea7165f5aed63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_63d6d3d358ce4f2a8d319d3197381469 = $(`<div id="html_63d6d3d358ce4f2a8d319d3197381469" style="width: 100.0%; height: 100.0%;">Western<br>Lines: Blue<br>Total Rides: 353,027</div>`)[0];
+            popup_9fb0cf393d834d89bf0ea7165f5aed63.setContent(html_63d6d3d358ce4f2a8d319d3197381469);
+        
+
+        circle_marker_718c08504e4e40d5b375a44c488cbe0a.bindPopup(popup_9fb0cf393d834d89bf0ea7165f5aed63)
+        ;
+
+        
+    
+    
+            var circle_marker_70080d4c341048e8bf0ce3311f8044df = L.circleMarker(
+                [41.966163, -87.688502],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5482939023250943, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_90aa2141fd134d5285093f1c3bbb6077 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_71636de97e0442d9b64acb713e61ba4c = $(`<div id="html_71636de97e0442d9b64acb713e61ba4c" style="width: 100.0%; height: 100.0%;">Western<br>Lines: Brown<br>Total Rides: 1,302,345</div>`)[0];
+            popup_90aa2141fd134d5285093f1c3bbb6077.setContent(html_71636de97e0442d9b64acb713e61ba4c);
+        
+
+        circle_marker_70080d4c341048e8bf0ce3311f8044df.bindPopup(popup_90aa2141fd134d5285093f1c3bbb6077)
+        ;
+
+        
+    
+    
+            var circle_marker_9dbb5533ea7f454c8c075fbb43ba3569 = L.circleMarker(
+                [41.921939, -87.69689],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.454587419006089, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e86ebc22c1a248a5869b74f7aa90b838 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_761db13154ef4f768e3e76d00dbd9c07 = $(`<div id="html_761db13154ef4f768e3e76d00dbd9c07" style="width: 100.0%; height: 100.0%;">California<br>Lines: Blue<br>Total Rides: 1,878,584</div>`)[0];
+            popup_e86ebc22c1a248a5869b74f7aa90b838.setContent(html_761db13154ef4f768e3e76d00dbd9c07);
+        
+
+        circle_marker_9dbb5533ea7f454c8c075fbb43ba3569.bindPopup(popup_e86ebc22c1a248a5869b74f7aa90b838)
+        ;
+
+        
+    
+    
+            var circle_marker_03b75e651c6348eaa2d89f2d576a06ca = L.circleMarker(
+                [41.874257, -87.817318],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.5856337507160052, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_26e6be38abaf4743a142e1b804729cbd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b8e91eae34194035802a3e81a9068ea8 = $(`<div id="html_b8e91eae34194035802a3e81a9068ea8" style="width: 100.0%; height: 100.0%;">Forest Park<br>Lines: Blue<br>Total Rides: 690,267</div>`)[0];
+            popup_26e6be38abaf4743a142e1b804729cbd.setContent(html_b8e91eae34194035802a3e81a9068ea8);
+        
+
+        circle_marker_03b75e651c6348eaa2d89f2d576a06ca.bindPopup(popup_26e6be38abaf4743a142e1b804729cbd)
+        ;
+
+        
+    
+    
+            var circle_marker_43e06607eb804145ba19cc4d86f1148d = L.circleMarker(
+                [41.983507, -87.859388],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.101931617688923, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_26ebd5daa45d41f480c813def6a4fc7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_905c75704454458aa909e5efecdb83d3 = $(`<div id="html_905c75704454458aa909e5efecdb83d3" style="width: 100.0%; height: 100.0%;">Rosemont<br>Lines: Blue<br>Total Rides: 2,290,178</div>`)[0];
+            popup_26ebd5daa45d41f480c813def6a4fc7d.setContent(html_905c75704454458aa909e5efecdb83d3);
+        
+
+        circle_marker_43e06607eb804145ba19cc4d86f1148d.bindPopup(popup_26ebd5daa45d41f480c813def6a4fc7d)
+        ;
+
+        
+    
+    
+            var circle_marker_11c8e79de50c443091dab5ad2d8934a6 = L.circleMarker(
+                [41.879507, -87.626037],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.524482423782603, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_0842136b27c04ba9aa2621a290bf378c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a077dc75125d41d197f29ca6088b3f12 = $(`<div id="html_a077dc75125d41d197f29ca6088b3f12" style="width: 100.0%; height: 100.0%;">Adams/Wabash<br>Lines: Green, Purple_Express, Pink, Orange<br>Total Rides: 2,558,844</div>`)[0];
+            popup_0842136b27c04ba9aa2621a290bf378c.setContent(html_a077dc75125d41d197f29ca6088b3f12);
+        
+
+        circle_marker_11c8e79de50c443091dab5ad2d8934a6.bindPopup(popup_0842136b27c04ba9aa2621a290bf378c)
+        ;
+
+        
+    
+    
+            var circle_marker_bc61d035a42a42888e7f36f0a646dea2 = L.circleMarker(
+                [41.977984, -87.658668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_2af537d89fe34167bd0b932dc3a43736 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_97832bcfbea740e6832505171f8d9bb7 = $(`<div id="html_97832bcfbea740e6832505171f8d9bb7" style="width: 100.0%; height: 100.0%;">Berwyn<br>Lines: Red<br>Total Rides: 0</div>`)[0];
+            popup_2af537d89fe34167bd0b932dc3a43736.setContent(html_97832bcfbea740e6832505171f8d9bb7);
+        
+
+        circle_marker_bc61d035a42a42888e7f36f0a646dea2.bindPopup(popup_2af537d89fe34167bd0b932dc3a43736)
+        ;
+
+        
+    
+    
+            var circle_marker_6fd61e6fe0164aaca3cd2dd74a070247 = L.circleMarker(
+                [41.98227, -87.8089],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9234356485505162, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_de205df57d424394b5e4b36e1f931772 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a575ca49f6f45468a80c879ee732687 = $(`<div id="html_9a575ca49f6f45468a80c879ee732687" style="width: 100.0%; height: 100.0%;">Harlem<br>Lines: Blue<br>Total Rides: 905,048</div>`)[0];
+            popup_de205df57d424394b5e4b36e1f931772.setContent(html_9a575ca49f6f45468a80c879ee732687);
+        
+
+        circle_marker_6fd61e6fe0164aaca3cd2dd74a070247.bindPopup(popup_de205df57d424394b5e4b36e1f931772)
+        ;
+
+        
+    
+    
+            var circle_marker_5679130ed6f14a8f84befff31b2eed51 = L.circleMarker(
+                [41.938132, -87.712359],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.573558309167666, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b31b5af271f34b0da7981907fa0089b3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8602d470de74542a2565665019a64f1 = $(`<div id="html_f8602d470de74542a2565665019a64f1" style="width: 100.0%; height: 100.0%;">Belmont<br>Lines: Blue<br>Total Rides: 1,954,228</div>`)[0];
+            popup_b31b5af271f34b0da7981907fa0089b3.setContent(html_f8602d470de74542a2565665019a64f1);
+        
+
+        circle_marker_5679130ed6f14a8f84befff31b2eed51.bindPopup(popup_b31b5af271f34b0da7981907fa0089b3)
+        ;
+
+        
+    
+    
+            var circle_marker_7a82a89c40094e669ea7bbbd7f7ee15f = L.circleMarker(
+                [41.90392, -87.631412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.2926250756110935, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_3cd00fdca5e0411094fb3286f9dc809a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c4557533e8c64b2289d2ffc91db57091 = $(`<div id="html_c4557533e8c64b2289d2ffc91db57091" style="width: 100.0%; height: 100.0%;">Clark/Division<br>Lines: Red<br>Total Rides: 3,047,244</div>`)[0];
+            popup_3cd00fdca5e0411094fb3286f9dc809a.setContent(html_c4557533e8c64b2289d2ffc91db57091);
+        
+
+        circle_marker_7a82a89c40094e669ea7bbbd7f7ee15f.bindPopup(popup_3cd00fdca5e0411094fb3286f9dc809a)
+        ;
+
+        
+    
+    
+            var circle_marker_3f9ca17f84a9463baf79fc4ea5b302eb = L.circleMarker(
+                [41.821732, -87.621371],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8664531154601448, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_209ab02b51864cc990bda9b18c732821 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_15c8698546dd4d0b906a300ddf56a3af = $(`<div id="html_15c8698546dd4d0b906a300ddf56a3af" style="width: 100.0%; height: 100.0%;">Indiana<br>Lines: Green<br>Total Rides: 232,998</div>`)[0];
+            popup_209ab02b51864cc990bda9b18c732821.setContent(html_15c8698546dd4d0b906a300ddf56a3af);
+        
+
+        circle_marker_3f9ca17f84a9463baf79fc4ea5b302eb.bindPopup(popup_209ab02b51864cc990bda9b18c732821)
+        ;
+
+        
+    
+    
+            var circle_marker_55bdeb44bbbe4919af585cb46460de9d = L.circleMarker(
+                [41.853751, -87.733258],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.78346885923896, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_76ad5c48ecf24070922d25e47ea53bfe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d91533471fe8436abcdaea0bd48c9e67 = $(`<div id="html_d91533471fe8436abcdaea0bd48c9e67" style="width: 100.0%; height: 100.0%;">Kostner<br>Lines: Pink<br>Total Rides: 180,235</div>`)[0];
+            popup_76ad5c48ecf24070922d25e47ea53bfe.setContent(html_d91533471fe8436abcdaea0bd48c9e67);
+        
+
+        circle_marker_55bdeb44bbbe4919af585cb46460de9d.bindPopup(popup_76ad5c48ecf24070922d25e47ea53bfe)
+        ;
+
+        
+    
+    
+            var circle_marker_1e708105c1554109a5c31a31aa351189 = L.circleMarker(
+                [42.038951, -87.751919],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.2662411684827486, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_cdba822a4b0149acb0208f257dafb4a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_be78c05d75044c3797c0fdbc3f4276df = $(`<div id="html_be78c05d75044c3797c0fdbc3f4276df" style="width: 100.0%; height: 100.0%;">Dempster-Skokie<br>Lines: Yellow<br>Total Rides: 487,191</div>`)[0];
+            popup_cdba822a4b0149acb0208f257dafb4a4.setContent(html_be78c05d75044c3797c0fdbc3f4276df);
+        
+
+        circle_marker_1e708105c1554109a5c31a31aa351189.bindPopup(popup_cdba822a4b0149acb0208f257dafb4a4)
+        ;
+
+        
+    
+    
+            var circle_marker_f8317447b6a54d80bb2b36a531963b31 = L.circleMarker(
+                [41.885586, -87.652193],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.8053238073578757, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f493eac0a7104490954533765a4ac747 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_949f5d0039374ea79c24e83382c42047 = $(`<div id="html_949f5d0039374ea79c24e83382c42047" style="width: 100.0%; height: 100.0%;">Morgan<br>Lines: Green, Pink<br>Total Rides: 2,101,589</div>`)[0];
+            popup_f493eac0a7104490954533765a4ac747.setContent(html_949f5d0039374ea79c24e83382c42047);
+        
+
+        circle_marker_f8317447b6a54d80bb2b36a531963b31.bindPopup(popup_f493eac0a7104490954533765a4ac747)
+        ;
+
+        
+    
+    
+            var circle_marker_7355954930b34704beed48bec48a0773 = L.circleMarker(
+                [41.871574, -87.745154],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0384941069744018, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a822f49e06e4407d8a5c138507c5c53f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e1f3097a2f2c451ebb41adc956548a34 = $(`<div id="html_e1f3097a2f2c451ebb41adc956548a34" style="width: 100.0%; height: 100.0%;">Cicero<br>Lines: Blue<br>Total Rides: 342,385</div>`)[0];
+            popup_a822f49e06e4407d8a5c138507c5c53f.setContent(html_e1f3097a2f2c451ebb41adc956548a34);
+        
+
+        circle_marker_7355954930b34704beed48bec48a0773.bindPopup(popup_a822f49e06e4407d8a5c138507c5c53f)
+        ;
+
+        
+    
+    
+            var circle_marker_778719a392de4b29ba5fd60204912e9b = L.circleMarker(
+                [42.02624348, -87.74722084],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8995096720861302, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_289be54f55964894bc1d76516738b9dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_071c727eb1b946f7ad8a766662bfe312 = $(`<div id="html_071c727eb1b946f7ad8a766662bfe312" style="width: 100.0%; height: 100.0%;">Oakton-Skokie<br>Lines: Yellow<br>Total Rides: 254,016</div>`)[0];
+            popup_289be54f55964894bc1d76516738b9dc.setContent(html_071c727eb1b946f7ad8a766662bfe312);
+        
+
+        circle_marker_778719a392de4b29ba5fd60204912e9b.bindPopup(popup_289be54f55964894bc1d76516738b9dc)
+        ;
+
+        
+    
+    
+            var circle_marker_6e6ee933c9064627b1f2396c45d37cc1 = L.circleMarker(
+                [41.780309, -87.605857],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0667285395821517, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_84e1f95553604704a8f3375a8c87173f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_402f7b57f61f4c4082a58d8315cb892b = $(`<div id="html_402f7b57f61f4c4082a58d8315cb892b" style="width: 100.0%; height: 100.0%;">Cottage Grove<br>Lines: Green<br>Total Rides: 360,337</div>`)[0];
+            popup_84e1f95553604704a8f3375a8c87173f.setContent(html_402f7b57f61f4c4082a58d8315cb892b);
+        
+
+        circle_marker_6e6ee933c9064627b1f2396c45d37cc1.bindPopup(popup_84e1f95553604704a8f3375a8c87173f)
+        ;
+
+        
+    
+    
+            var circle_marker_3091b084ac9f4bc88f690b2a866df73b = L.circleMarker(
+                [41.78661, -87.737875],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.2275562840643115, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_93e13e4c49874423a64957c0ed7be99c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_496dbc2ee14a499b9f674bca358fab4f = $(`<div id="html_496dbc2ee14a499b9f674bca358fab4f" style="width: 100.0%; height: 100.0%;">Midway<br>Lines: Orange<br>Total Rides: 3,005,872</div>`)[0];
+            popup_93e13e4c49874423a64957c0ed7be99c.setContent(html_496dbc2ee14a499b9f674bca358fab4f);
+        
+
+        circle_marker_3091b084ac9f4bc88f690b2a866df73b.bindPopup(popup_93e13e4c49874423a64957c0ed7be99c)
+        ;
+
+        
+    
+    
+            var circle_marker_c6c997b9a07947509c40d3f070eb14fd = L.circleMarker(
+                [42.063987, -87.685617],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9003652609530317, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_be874ca0752448ac851a34c5f0d45aad = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ce0c6d9f150c4449b8f41e1be1f3a535 = $(`<div id="html_ce0c6d9f150c4449b8f41e1be1f3a535" style="width: 100.0%; height: 100.0%;">Central<br>Lines: Purple, Purple_Express<br>Total Rides: 254,560</div>`)[0];
+            popup_be874ca0752448ac851a34c5f0d45aad.setContent(html_ce0c6d9f150c4449b8f41e1be1f3a535);
+        
+
+        circle_marker_c6c997b9a07947509c40d3f070eb14fd.bindPopup(popup_be874ca0752448ac851a34c5f0d45aad)
+        ;
+
+        
+    
+    
+            var circle_marker_e1e7c4d00c5b495bb668b9ac53c4c31f = L.circleMarker(
+                [41.885412, -87.725404],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.3574683314161224, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_5dee9f5892ca49f28916e548fe02d55a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa0e54175f9b4a8688307aa834229635 = $(`<div id="html_aa0e54175f9b4a8688307aa834229635" style="width: 100.0%; height: 100.0%;">Pulaski<br>Lines: Green<br>Total Rides: 545,195</div>`)[0];
+            popup_5dee9f5892ca49f28916e548fe02d55a.setContent(html_aa0e54175f9b4a8688307aa834229635);
+        
+
+        circle_marker_e1e7c4d00c5b495bb668b9ac53c4c31f.bindPopup(popup_5dee9f5892ca49f28916e548fe02d55a)
+        ;
+
+        
+    
+    
+            var circle_marker_3d9bd969df824169b9c454b6a1fa9b09 = L.circleMarker(
+                [41.887159, -87.783661],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.131533105155332, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a802980ff63a4d9a94fa1fe68314b998 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d10dfeb6a4564efb8e6d110282d9de51 = $(`<div id="html_d10dfeb6a4564efb8e6d110282d9de51" style="width: 100.0%; height: 100.0%;">Ridgeland<br>Lines: Green<br>Total Rides: 401,541</div>`)[0];
+            popup_a802980ff63a4d9a94fa1fe68314b998.setContent(html_d10dfeb6a4564efb8e6d110282d9de51);
+        
+
+        circle_marker_3d9bd969df824169b9c454b6a1fa9b09.bindPopup(popup_a802980ff63a4d9a94fa1fe68314b998)
+        ;
+
+        
+    
+    
+            var circle_marker_946c7307115e45278e232bdde986dfb2 = L.circleMarker(
+                [42.073153, -87.69073],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0037027810098276, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_5e690121561449319ab66001cad0215d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4086fc53d6c4480f893be236319d5df8 = $(`<div id="html_4086fc53d6c4480f893be236319d5df8" style="width: 100.0%; height: 100.0%;">Linden<br>Lines: Purple, Purple_Express<br>Total Rides: 320,264</div>`)[0];
+            popup_5e690121561449319ab66001cad0215d.setContent(html_4086fc53d6c4480f893be236319d5df8);
+        
+
+        circle_marker_946c7307115e45278e232bdde986dfb2.bindPopup(popup_5e690121561449319ab66001cad0215d)
+        ;
+
+        
+    
+    
+            var circle_marker_b8a9cdbe11084bcb8520585756ccb005 = L.circleMarker(
+                [41.79542, -87.631157],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1197524013894515, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a4490566e3174cce83713b486ca875e2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ba107ba33d5243249957dfca51e4ddc7 = $(`<div id="html_ba107ba33d5243249957dfca51e4ddc7" style="width: 100.0%; height: 100.0%;">Garfield<br>Lines: Red<br>Total Rides: 1,029,870</div>`)[0];
+            popup_a4490566e3174cce83713b486ca875e2.setContent(html_ba107ba33d5243249957dfca51e4ddc7);
+        
+
+        circle_marker_b8a9cdbe11084bcb8520585756ccb005.bindPopup(popup_a4490566e3174cce83713b486ca875e2)
+        ;
+
+        
+    
+    
+            var circle_marker_2f9d6d12940f48c289b57eb2296a834a = L.circleMarker(
+                [41.910655, -87.649177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6281901747571714, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_1d904d3a72e543c9983242b8503abf2d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_79972d8fd8e44cd09fac1578dfd7921c = $(`<div id="html_79972d8fd8e44cd09fac1578dfd7921c" style="width: 100.0%; height: 100.0%;">North/Clybourn<br>Lines: Red<br>Total Rides: 1,988,964</div>`)[0];
+            popup_1d904d3a72e543c9983242b8503abf2d.setContent(html_79972d8fd8e44cd09fac1578dfd7921c);
+        
+
+        circle_marker_2f9d6d12940f48c289b57eb2296a834a.bindPopup(popup_1d904d3a72e543c9983242b8503abf2d)
+        ;
+
+        
+    
+    
+            var circle_marker_9a99137a4c0c4323b4b7539c4bc72978 = L.circleMarker(
+                [41.872108, -87.791602],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9805955905088772, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_bc0ce29380654f6d8cbbeda03f13d6ac = L.popup({"maxWidth": "100%"});
+
+        
+            var html_38e6889d2b504949965c8f176358a1b0 = $(`<div id="html_38e6889d2b504949965c8f176358a1b0" style="width: 100.0%; height: 100.0%;">Oak Park<br>Lines: Blue<br>Total Rides: 305,572</div>`)[0];
+            popup_bc0ce29380654f6d8cbbeda03f13d6ac.setContent(html_38e6889d2b504949965c8f176358a1b0);
+        
+
+        circle_marker_9a99137a4c0c4323b4b7539c4bc72978.bindPopup(popup_bc0ce29380654f6d8cbbeda03f13d6ac)
+        ;
+
+        
+    
+    
+            var circle_marker_ae852eed7610448eae3c7003556f0c52 = L.circleMarker(
+                [41.954521, -87.674868],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0141532328205147, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_83b60b61582e483abb6fb7f3b1521acc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_814b8152112849c7b2aa11ffa8d3d018 = $(`<div id="html_814b8152112849c7b2aa11ffa8d3d018" style="width: 100.0%; height: 100.0%;">Irving Park<br>Lines: Brown<br>Total Rides: 962,728</div>`)[0];
+            popup_83b60b61582e483abb6fb7f3b1521acc.setContent(html_814b8152112849c7b2aa11ffa8d3d018);
+        
+
+        circle_marker_ae852eed7610448eae3c7003556f0c52.bindPopup(popup_83b60b61582e483abb6fb7f3b1521acc)
+        ;
+
+        
+    
+    
+            var circle_marker_e31ac7ebcd234cd5afa8d0c3c31271f7 = L.circleMarker(
+                [41.966046, -87.701644],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.3593572325726457, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_b545653b86e64d6da1be336573dd92fe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3bfcdd17ce5c4049b4efbe2cbbc4204f = $(`<div id="html_3bfcdd17ce5c4049b4efbe2cbbc4204f" style="width: 100.0%; height: 100.0%;">Francisco<br>Lines: Brown<br>Total Rides: 546,396</div>`)[0];
+            popup_b545653b86e64d6da1be336573dd92fe.setContent(html_3bfcdd17ce5c4049b4efbe2cbbc4204f);
+        
+
+        circle_marker_e31ac7ebcd234cd5afa8d0c3c31271f7.bindPopup(popup_b545653b86e64d6da1be336573dd92fe)
+        ;
+
+        
+    
+    
+            var circle_marker_7ef8972a9e9b406da507d82857de20a7 = L.circleMarker(
+                [41.8768, -87.631739],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.936411031182754, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_7f2ff16563634920bac099dd4d8fc34a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_56f0769b4b714f10a4447af50423069d = $(`<div id="html_56f0769b4b714f10a4447af50423069d" style="width: 100.0%; height: 100.0%;">LaSalle/Van Buren<br>Lines: Brown<br>Total Rides: 913,298</div>`)[0];
+            popup_7f2ff16563634920bac099dd4d8fc34a.setContent(html_56f0769b4b714f10a4447af50423069d);
+        
+
+        circle_marker_7ef8972a9e9b406da507d82857de20a7.bindPopup(popup_7f2ff16563634920bac099dd4d8fc34a)
+        ;
+
+        
+    
+    
+            var circle_marker_91e5adc00eea4651a2a93d7f4f99163b = L.circleMarker(
+                [41.854109, -87.694774],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.5143619398841872, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_7b5f2788e9c447c18078687214e34d82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c675fd2f15194b57a9d4bb2528efd6a8 = $(`<div id="html_c675fd2f15194b57a9d4bb2528efd6a8" style="width: 100.0%; height: 100.0%;">California<br>Lines: Pink<br>Total Rides: 644,951</div>`)[0];
+            popup_7b5f2788e9c447c18078687214e34d82.setContent(html_c675fd2f15194b57a9d4bb2528efd6a8);
+        
+
+        circle_marker_91e5adc00eea4651a2a93d7f4f99163b.bindPopup(popup_7b5f2788e9c447c18078687214e34d82)
+        ;
+
+        
+    
+    
+            var circle_marker_ef33ef26c8c54c88a0e60dc22daad395 = L.circleMarker(
+                [41.854225, -87.685129],
+                {"bubblingMouseEvents": true, "color": "deeppink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "deeppink", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.3235090027136636, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_e825dcdc02894d65991933df1da9540a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9edb5b1f27d64c0da8fa2f08ebd661fb = $(`<div id="html_9edb5b1f27d64c0da8fa2f08ebd661fb" style="width: 100.0%; height: 100.0%;">Western<br>Lines: Pink<br>Total Rides: 523,603</div>`)[0];
+            popup_e825dcdc02894d65991933df1da9540a.setContent(html_9edb5b1f27d64c0da8fa2f08ebd661fb);
+        
+
+        circle_marker_ef33ef26c8c54c88a0e60dc22daad395.bindPopup(popup_e825dcdc02894d65991933df1da9540a)
+        ;
+
+        
+    
+    
+            var circle_marker_5689714902a743ed986a62fb39404455 = L.circleMarker(
+                [41.768367, -87.625724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.7239255360877634, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a176a40c383a4591b63fbc03d03fe5c3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8bfddf46704422c820d467809e23b07 = $(`<div id="html_f8bfddf46704422c820d467809e23b07" style="width: 100.0%; height: 100.0%;">69th<br>Lines: Red<br>Total Rides: 1,414,015</div>`)[0];
+            popup_a176a40c383a4591b63fbc03d03fe5c3.setContent(html_f8bfddf46704422c820d467809e23b07);
+        
+
+        circle_marker_5689714902a743ed986a62fb39404455.bindPopup(popup_a176a40c383a4591b63fbc03d03fe5c3)
+        ;
+
+        
+    
+    
+            var circle_marker_4b34081857c54ab1b68aa801afd69c3b = L.circleMarker(
+                [41.882695, -87.63378],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.280023069443933, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_50feab3aa0234a0c9740840171a908d0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa3b413b12264960b1c847f837113241 = $(`<div id="html_fa3b413b12264960b1c847f837113241" style="width: 100.0%; height: 100.0%;">Washington/Wells<br>Lines: Purple_Express, Pink, Orange<br>Total Rides: 2,403,412</div>`)[0];
+            popup_50feab3aa0234a0c9740840171a908d0.setContent(html_fa3b413b12264960b1c847f837113241);
+        
+
+        circle_marker_4b34081857c54ab1b68aa801afd69c3b.bindPopup(popup_50feab3aa0234a0c9740840171a908d0)
+        ;
+
+        
+    
+    
+            var circle_marker_2b1546d9fe46465a98ab292bbe122e0a = L.circleMarker(
+                [41.874039, -87.627479],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.870907524998451, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_02355cfd339948b1a10ceb7c940fa31c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b219d610129242ef96262ce326cda964 = $(`<div id="html_b219d610129242ef96262ce326cda964" style="width: 100.0%; height: 100.0%;">Harrison<br>Lines: Red<br>Total Rides: 1,507,469</div>`)[0];
+            popup_02355cfd339948b1a10ceb7c940fa31c.setContent(html_b219d610129242ef96262ce326cda964);
+        
+
+        circle_marker_2b1546d9fe46465a98ab292bbe122e0a.bindPopup(popup_02355cfd339948b1a10ceb7c940fa31c)
+        ;
+
+        
+    
+    
+            var circle_marker_3b66e1e49b9648a3bc699c322c41b0fd = L.circleMarker(
+                [41.885678, -87.641782],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.8442222744383074, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_db7fdb7b72b34eb3bd4dd83585df6b03 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ac55c404bbee4d43ad632d7c0015b4c0 = $(`<div id="html_ac55c404bbee4d43ad632d7c0015b4c0" style="width: 100.0%; height: 100.0%;">Clinton<br>Lines: Green, Pink<br>Total Rides: 1,490,502</div>`)[0];
+            popup_db7fdb7b72b34eb3bd4dd83585df6b03.setContent(html_ac55c404bbee4d43ad632d7c0015b4c0);
+        
+
+        circle_marker_3b66e1e49b9648a3bc699c322c41b0fd.bindPopup(popup_db7fdb7b72b34eb3bd4dd83585df6b03)
+        ;
+
+        
+    
+    
+            var circle_marker_075c2ddf905c4ac9a705985d7130fca4 = L.circleMarker(
+                [41.967901, -87.713065],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.022634572018406, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_f81b6638656a42f0a86df5104e9a695f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ff314d9e96e43d88f9c02670afdada2 = $(`<div id="html_9ff314d9e96e43d88f9c02670afdada2" style="width: 100.0%; height: 100.0%;">Kimball<br>Lines: Brown<br>Total Rides: 1,603,940</div>`)[0];
+            popup_f81b6638656a42f0a86df5104e9a695f.setContent(html_9ff314d9e96e43d88f9c02670afdada2);
+        
+
+        circle_marker_075c2ddf905c4ac9a705985d7130fca4.bindPopup(popup_f81b6638656a42f0a86df5104e9a695f)
+        ;
+
+        
+    
+    
+            var circle_marker_6a37a27d23f141fd80b978f30c4251f8 = L.circleMarker(
+                [41.947028, -87.674642],
+                {"bubblingMouseEvents": true, "color": "saddlebrown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "saddlebrown", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.6191605666640558, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a6754e8e77b041cc89a981252904f4bd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a5c06c1886b74c4786ec3384051bc6be = $(`<div id="html_a5c06c1886b74c4786ec3384051bc6be" style="width: 100.0%; height: 100.0%;">Addison<br>Lines: Brown<br>Total Rides: 711,584</div>`)[0];
+            popup_a6754e8e77b041cc89a981252904f4bd.setContent(html_a5c06c1886b74c4786ec3384051bc6be);
+        
+
+        circle_marker_6a37a27d23f141fd80b978f30c4251f8.bindPopup(popup_a6754e8e77b041cc89a981252904f4bd)
+        ;
+
+        
+    
+    
+            var circle_marker_4ac80d82a9e645d29da1310589073b3e = L.circleMarker(
+                [41.88574, -87.627835],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.082154618119548, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_ae9bcf170fb743adba83221835c683dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_561ab02657294a88a97df65072abad81 = $(`<div id="html_561ab02657294a88a97df65072abad81" style="width: 100.0%; height: 100.0%;">State/Lake<br>Lines: Green, Brown<br>Total Rides: 4,820,881</div>`)[0];
+            popup_ae9bcf170fb743adba83221835c683dc.setContent(html_561ab02657294a88a97df65072abad81);
+        
+
+        circle_marker_4ac80d82a9e645d29da1310589073b3e.bindPopup(popup_ae9bcf170fb743adba83221835c683dc)
+        ;
+
+        
+    
+    
+            var circle_marker_4476cb47696140e6bc7bc747d935bc41 = L.circleMarker(
+                [41.886519, -87.744698],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1907323054313852, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_19b3c5d370f543268203f0f6c2684274 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_88843f8cd57043eb85c4817cddd39366 = $(`<div id="html_88843f8cd57043eb85c4817cddd39366" style="width: 100.0%; height: 100.0%;">Cicero<br>Lines: Green<br>Total Rides: 439,181</div>`)[0];
+            popup_19b3c5d370f543268203f0f6c2684274.setContent(html_88843f8cd57043eb85c4817cddd39366);
+        
+
+        circle_marker_4476cb47696140e6bc7bc747d935bc41.bindPopup(popup_19b3c5d370f543268203f0f6c2684274)
+        ;
+
+        
+    
+    
+            var circle_marker_2e7a7fa155d84d04859d163bbe3fbaf6 = L.circleMarker(
+                [41.961539, -87.743574],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9229795441913224, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_a33a7af5b78047fa9480c5514bab27ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_be6c423f89f943708b007583ee3176ab = $(`<div id="html_be6c423f89f943708b007583ee3176ab" style="width: 100.0%; height: 100.0%;">Montrose<br>Lines: Blue<br>Total Rides: 904,758</div>`)[0];
+            popup_a33a7af5b78047fa9480c5514bab27ca.setContent(html_be6c423f89f943708b007583ee3176ab);
+        
+
+        circle_marker_2e7a7fa155d84d04859d163bbe3fbaf6.bindPopup(popup_a33a7af5b78047fa9480c5514bab27ca)
+        ;
+
+        
+    
+    
+            var circle_marker_e86094047949467caeafc86e5c39496b = L.circleMarker(
+                [41.88497405, -87.67689149],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8091160791885244, "stroke": true, "weight": 3}
+            ).addTo(map_aa58052b7870410eb949e6c936159e06);
+        
+    
+        var popup_7cb6a99acb5c406ab036b64b4b6be942 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_475731784b6349458a2e2c7dd4ad2efc = $(`<div id="html_475731784b6349458a2e2c7dd4ad2efc" style="width: 100.0%; height: 100.0%;">Damen<br>Lines: Green<br>Total Rides: 196,542</div>`)[0];
+            popup_7cb6a99acb5c406ab036b64b4b6be942.setContent(html_475731784b6349458a2e2c7dd4ad2efc);
+        
+
+        circle_marker_e86094047949467caeafc86e5c39496b.bindPopup(popup_7cb6a99acb5c406ab036b64b4b6be942)
+        ;
+
+        
+    
+</script>
