@@ -86,8 +86,8 @@ Riders with disabilities still face barriers at **nearly 30%** of CTA stations. 
 <iframe src="figures/ada_access_map.html" width="100%" height="600" style="border:none;"></iframe>
 
 <br>
-### ADA Accessibility by CTA Line 
 
+### ADA Accessibility by CTA Line 
 _The share of stations on each line that are ADA accessible as of 2023._
 
 | Line              | Total Stations | ADA Accessible | Percent Accessible (%) |
