@@ -17,15 +17,15 @@ CTA ridership plummeted during the pandemic and has yet to fully rebound. This a
 
 ## 2. Key Findings
 
-* Annual ridership remains ~63% of pre-COVID levels
+* Annual ridership remains **~63%** of pre-COVID levels
 * Every month has seen lower ridership post-COVID
 * Lake, O’Hare, and Clark/Lake are top stations by traffic
-* Nearly 30% of stations remain non-ADA accessible
+* Nearly **30%** of stations remain non-ADA accessible
 
 ## 3. Ridership Over Time
 
 ### Annual Ridership Trend (2001–Present)
-CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pandemic levels. As of 2024, total boardings are only ~63% of pre-COVID averages.
+CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pandemic levels. As of 2024, total boardings are only **~63%** of pre-COVID averages.
 <iframe src="annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
 
 ---
@@ -74,7 +74,7 @@ These are the busiest CTA 'L' stations based on total boardings from 2023–Pres
 ---
 
 ## 6. Accessibility Gaps
-Riders with disabilities still face barriers at nearly 30% of CTA stations. Non-accessible stops are concentrated along the Blue and Pink Lines, limiting equitable transit access across the system.
+Riders with disabilities still face barriers at **nearly 30%** of CTA stations. Non-accessible stops are concentrated along the Blue and Pink Lines, limiting equitable transit access across the system.
 
 ### Map: Non-ADA Accessible CTA Stations  
 *Each marker represents a CTA ‘L’ station that is not currently ADA accessible. Zoom and pan to explore patterns by line and location.*
