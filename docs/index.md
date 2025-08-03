@@ -61,15 +61,14 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 
 ## 5. Station-Level Insights
 
-***Top 3 Most Used Stations (Post-COVID)***
-These are the busiest CTA 'L' stations based on total boardings from 2023–Present.
+### Top 3 Most Used Stations (Post-COVID)  
+These are the busiest CTA ‘L’ stations based on total boardings from 2023–Present.
 
-
-| Station               | Total Rides |
-|-----------------------|-------------|
-| Lake (Red Line)       | 6.36M       |
-| O'Hare (Blue Line)    | 5.79M       |
-| Clark/Lake (Loop)     | 5.26M       |
+| Station             | Total Rides |
+|---------------------|-------------|
+| Lake (Red Line)     | 6.36M       |
+| O’Hare (Blue Line)  | 5.79M       |
+| Clark/Lake (Loop)   | 5.26M       |
 
 
 ### Map: Which CTA Stations are the Busiest? (Post-COVID)
