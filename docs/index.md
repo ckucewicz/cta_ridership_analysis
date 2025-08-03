@@ -2,12 +2,38 @@
 
 [About](index.md) | [Summary](summary.md) | [Trends](trends.md)
 
-This project analyzes CTA 'L' ridership data using SQL and Python to uncover long-term ridership trends, identify accessibility gaps, and highlight high-traffic stations—especially in light of CTA’s looming budget cliff.
+## About
 
-Stay tuned as the analysis expands to include geographic overlays, equity-focused metrics, and policy recommendations.
+This project analyzes CTA 'L' ridership trends from 2001 to 2023 using SQL and Python to examine long-term shifts, highlight equity and accessibility gaps, and explore which stations and lines see the most post-pandemic traffic.
+
+**Data sources**:
+- [CTA Ridership Data (Daily)](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Daily-Boarding-Totals/x2n5-8w5q)
+- [CTA 'L' Station Locations](https://data.cityofchicago.org/Transportation/CTA-L-System-Station-Locations/k4mn-3j89)
 
 
-### Monthly Ridership Comparison  
+## Summary
+
+CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pandemic levels. As of 2023, total boardings are only ~63% of pre-COVID averages.
+
+### Annual Ridership Trend (2001–2023)
+*Total annual boardings, 2001–2023*
+
+### Annual Ridership Chart
+
+<iframe src="figures/annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
+
+**Key takeaway**: Despite partial recovery, the system has not returned to previous demand levels.
+
+
+## Trends
+
+### Average Daily Ridership by Month: Pre- vs. Post-COVID
+
+[Embed lollipop Plotly chart here]
+
+Each month now sees lower average boardings than before the pandemic, though some months (e.g. July, October) have held up better than others.
+
+### Summary Table: Monthly Ridership Comparison  
 _Average monthly boardings before and after COVID-19 (in millions)_
 
 | Month     | Pre-COVID Avg (mil) | Post-COVID Avg (mil) | Percent Recovered (%) |
@@ -24,3 +50,28 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 | October   | 15.8               | 10.3                | 65.2                   |
 | November  | 13.8               | 8.6                 | 62.3                   |
 | December  | 12.6               | 7.6                 | 60.3                   |
+
+
+## Top Stations (Post-COVID)
+
+These are the busiest 'L' stations from 2020–2023:
+
+| Station | Total Rides |
+|---------|-------------|
+| Lake (Red Line) | 6.36M |
+| O'Hare (Blue Line) | 5.79M |
+| Clark/Lake (Loop) | 5.26M |
+
+
+
+
+
+### Top 3 Stations by Total Post-COVID Ridership
+
+These are the busiest CTA 'L' stations based on total boardings from 2023-Present.
+
+| Station Name                  | Total Rides     |
+|------------------------------|-----------------|
+| Lake (Red Line)              | 6,358,194       |
+| O'Hare (Blue Line)           | 5,791,109       |
+| Clark/Lake (All Lines)       | 5,263,110       |
