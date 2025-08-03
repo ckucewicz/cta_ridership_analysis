@@ -62,7 +62,7 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 ## 5. Station-Level Insights
 
 ### Top 3 Most Used Stations (Post-COVID)  
-_These are the busiest CTA ‘L’ stations based on total boardings from 2023–Present._
+*These are the busiest CTA ‘L’ stations based on total boardings from 2023–Present.*
 
 | Station             | Total Rides |
 |---------------------|-------------|
@@ -85,9 +85,8 @@ Riders with disabilities still face barriers at **nearly 30%** of CTA stations. 
 
 <iframe src="figures/ada_access_map.html" width="100%" height="600" style="border:none;"></iframe>
 
-
-
-***ADA Accessibility by CTA Line*** 
+<br>
+### ADA Accessibility by CTA Line 
 
 _The share of stations on each line that are ADA accessible as of 2023._
 
