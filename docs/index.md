@@ -1,6 +1,6 @@
 *Exploring post-pandemic ridership trends, accessibility gaps, and system usage across Chicago’s 'L' network.*
 
-<img src="images/justin-shen-3UD7z1MSLmI-unsplash.jpg" alt="Image of Chicago 'L' Train" width="100%" height="100%">
+<img src="images/justin-shen-3UD7z1MSLmI-unsplash.jpg" alt="Image of Chicago 'L' Train" width="100%" height="400">
 
 <p><sub>Photo by <a href="https://unsplash.com/@shenny_visuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Justin Shen</a> on <a href="https://unsplash.com/photos/a-train-traveling-over-a-bridge-next-to-tall-buildings-3UD7z1MSLmI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></sub></p>
 
