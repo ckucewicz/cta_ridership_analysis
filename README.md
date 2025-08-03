@@ -30,39 +30,27 @@ I used two primary datasets:
 * Key columns: station_id, station_name, ride_date, day_type, rides
 
 # 3. Database Setup
-The raw datasets were initially cleaned and explored using SQL in PostgreSQL. Relevant transformations included:
+These tables were connected by identifying a one-to-many relationship between l_station_info.map_id and ridership_l_stations.station_id. Although named differently, map_id in the station metadata corresponds to station_id in the ridership data.
 
-* Handling missing station names
-* Creating year and month columns
-* Filtering to rail stations only
-* Exporting cleaned results for use in Python
+Entity Relationship Diagram (ERD):
+<img src="/images/ERD - CTA data tables.png" alt="Alt text" width="80%"/>
 
 # 4. Data Exploration and Cleaning
-Data cleaning was a critical step in preparing this analysis and was split across SQL (PostgreSQL) and Python (Pandas/GeoPandas):
-
-**In SQL**:
+Data cleaning was a critical step in preparing this analysis and was performed using SQL (PostgreSQL):
 
 Initial Exploration:
-* Inspected both ridership_l_stations and l_station_info tables
-* Verified table sizes (1.25M+ records in ridership, 302 in station info)
-* Confirmed minimal/null values in key columns
+* Used basic SELECT statements to inspect tables and verify record counts and nulls
+* Confirmed data completeness with column-wise null checks and summary stats
 
 Duplicate Detection & Handling:
-* Identified ~600 duplicated (station_id, ride_date) pairs
-* Verified all duplicates were exact pairs (no triple duplicates)
-* Calculated differences in ride counts among duplicates
-* Cleaned data by averaging ride counts across duplicates
+* Identified ~600 duplicated (station_id, ride_date) pairs using GROUP BY, HAVING, and subqueries
+* Used CTEs to aggregate duplicate ride counts via AVG() and reconstruct a cleaned table
 
-Merging Metadata:
-* Joined cleaned ridership data with station metadata using station_id = map_id
-* Removed four legacy stations that no longer appear in the current station dataset
-* Verified no duplicates after merging
+Merging Station Metadata:
+* Merged cleaned_ridership with l_station_info on station_id = map_id using LEFT JOIN
+* Removed 4 legacy stations with DELETE; verified uniqueness via GROUP BY and HAVING
   
 **Final result**: final_ridership table with station-level attributes (e.g., ADA access, line info)
-
-**In Python**:
-* Further refined station metadata, ensuring unique entries per map_id
-* Merged in ADA accessibility and line information for grouped analysis
   
 # 5. Analysis
 Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn.
