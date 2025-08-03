@@ -20,7 +20,7 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 ### Annual Ridership Chart
 
-<iframe src="figures/annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
 
 **Key takeaway**: Despite partial recovery, the system has not returned to previous demand levels.
 
@@ -29,7 +29,9 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 ### Average Daily Ridership by Month: Pre- vs. Post-COVID
 
-[Embed lollipop Plotly chart here]
+<iframe src="figures/monthly_avg_lollipop.html" width="100%" height="600" style="border:none;"></iframe>
+
+_Key takeaway: Every month has lower average daily ridership post-COVID than pre-COVID._
 
 Each month now sees lower average boardings than before the pandemic, though some months (e.g. July, October) have held up better than others.
 
@@ -52,9 +54,10 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 | December  | 12.6               | 7.6                 | 60.3                   |
 
 
-## Top Stations (Post-COVID)
 
-These are the busiest 'L' stations from 2020–2023:
+### Top 3 Stations by Total Post-COVID Ridership
+
+These are the busiest CTA 'L' stations based on total boardings from 2023-Present.
 
 | Station | Total Rides |
 |---------|-------------|
@@ -64,14 +67,6 @@ These are the busiest 'L' stations from 2020–2023:
 
 
 
+<iframe src="figures/ada_access_map.html" width="100%" height="600" style="border:none;"></iframe>
 
-
-### Top 3 Stations by Total Post-COVID Ridership
-
-These are the busiest CTA 'L' stations based on total boardings from 2023-Present.
-
-| Station Name                  | Total Rides     |
-|------------------------------|-----------------|
-| Lake (Red Line)              | 6,358,194       |
-| O'Hare (Blue Line)           | 5,791,109       |
-| Clark/Lake (All Lines)       | 5,263,110       |
+**Key takeaway:** [Add a one-sentence summary here about ADA accessibility across CTA lines.]
