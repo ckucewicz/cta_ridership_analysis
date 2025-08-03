@@ -94,6 +94,7 @@ With CTA facing a potential budget cliff, further analysis should focus on suppo
 ```
 cta_ridership_analysis/
 ├── SQL_scripts/              # SQL queries used for data cleaning and exploration
+├── docs/                     # Includes information for github.io/pages
 ├── images/                   # Project images for README or GitHub Pages
 ├── Ridership Analysis.ipynb  # Main Jupyter notebook with analysis and visualizations
 ├── README.md                 # Project overview, key takeaways, and next steps
