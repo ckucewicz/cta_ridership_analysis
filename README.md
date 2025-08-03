@@ -1,7 +1,7 @@
 # 1. Project Overview
 This project analyzes ridership patterns on the Chicago Transit Authority's (CTA) elevated rail system, commonly known as the "L". Using SQL and Python, the project explores trends and insights to better understand how ridership has evolved and where service is most heavily used.
 
-<img src="/images/justin-shen-3UD7z1MSLmI-unsplash.jpg" alt="Alt text" width="80%"/>
+<img src="docs/images/justin-shen-3UD7z1MSLmI-unsplash.jpg" alt="Alt text" width="80%"/>
 <p><sub>Photo by <a href="https://unsplash.com/@shenny_visuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Justin Shen</a> on <a href="https://unsplash.com/photos/a-train-traveling-over-a-bridge-next-to-tall-buildings-3UD7z1MSLmI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></sub></p>
 
 ## Key Questions:
@@ -33,7 +33,7 @@ I used two primary datasets:
 These tables were connected by identifying a one-to-many relationship between l_station_info.map_id and ridership_l_stations.station_id. Although named differently, map_id in the station metadata corresponds to station_id in the ridership data.
 
 Entity Relationship Diagram (ERD):
-<img src="/images/ERD - CTA data tables.png" alt="Alt text" width="80%"/>
+<img src="docs/images/ERD - CTA data tables.png" alt="Alt text" width="80%"/>
 
 # 4. Data Exploration and Cleaning
 Data cleaning was a critical step in preparing this analysis and was performed using SQL (PostgreSQL):
