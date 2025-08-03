@@ -80,7 +80,16 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
    
 	Stations like Lake, O’Hare, and Clark/Lake handle the most riders due to their centrality and transfer options.
 
-# 7. Repository Structure
+# 7. Next Steps
+With CTA facing a potential budget cliff, further analysis should focus on supporting data-driven decisions around service planning and funding advocacy. Key next steps could include:
+
+1. **Analyze ridership by time of day or week** to better understand commuting patterns and identify opportunities for targeted service adjustments.
+
+2. **Forecast future ridership** using time series models to project recovery trends and inform long-term budget planning.
+
+3. **Overlay ridership data** with population density to assess equity in service coverage and identify potential gaps in access.
+   
+# 8. Repository Structure
 <pre>
 ```
 cta_ridership_analysis/
