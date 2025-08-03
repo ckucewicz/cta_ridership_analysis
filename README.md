@@ -1,5 +1,8 @@
 # 1. Project Overview
-This project analyzes ridership patterns on the Chicago Transit Authority's (CTA) elevated rail system, commonly known as the "L". Using SQL and Tableau, the project explores trends and insights to better understand how ridership has evolved and where service is most heavily used.
+This project analyzes ridership patterns on the Chicago Transit Authority's (CTA) elevated rail system, commonly known as the "L". Using SQL and Python, the project explores trends and insights to better understand how ridership has evolved and where service is most heavily used.
+
+<img src="/images/justin-shen-3UD7z1MSLmI-unsplash.jpg" alt="Alt text" width="80%"/>
+<p><sub>Photo by <a href="https://unsplash.com/@shenny_visuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Justin Shen</a> on <a href="https://unsplash.com/photos/a-train-traveling-over-a-bridge-next-to-tall-buildings-3UD7z1MSLmI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></sub></p>
 
 ## Key Questions:
 * How has ridership changed over time? Has it recovered to pre-COVID levels?
@@ -66,7 +69,6 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
 
 *Ridership Over Time*:
 * Daily ridership plummeted in 2020 and has not returned to pre-pandemic levels.
-* 2023 ridership remains significantly lower than 2019.
  
 *Station-Level Patterns*:
 * Downtown transfer stations like Lake, Clark/Lake, and Jackson are the busiest.
