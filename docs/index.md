@@ -37,7 +37,7 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 ### Monthly Ridership: Pre- vs. Post-COVID
 
-<iframe src="figures/monthly_avg_lollipop.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="figures/monthly_average_lollipop.html" width="100%" height="600" style="border:none;"></iframe>
 
 
 Each month now sees lower average boardings than before the pandemic, though some months (e.g. July, October) have held up better than others.
