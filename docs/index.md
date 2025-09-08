@@ -31,9 +31,16 @@ CTA ridership plummeted during the pandemic and has yet to fully rebound. This a
 CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pandemic levels. As of 2024, total boardings are only **~63%** of pre-COVID averages.
 <iframe src="figures/annual_ridership.html" width="100%" height="600" style="border:none;"></iframe>
 
+## 4. Ridership Forecast
+
+*Based on post-pandemic recovery pace (2020–2024), ridership could approach pre-COVID levels by 2030, though this projection should be interpreted with caution given limited data and a simple model.*
+
+<iframe src="figures/annual_ridership_forecast_linear_2020_2024.html"
+        width="100%" height="600" style="border:none;"></iframe>
+
 ---
 
-## 4. Seasonal Patterns
+## 5. Seasonal Patterns
 
 ### Monthly Ridership: Pre- vs. Post-COVID
 
@@ -62,7 +69,7 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 
 ---
 
-## 5. Station-Level Insights
+## 6. Station-Level Insights
 
 ### Top 3 Most Used Stations (Post-COVID)  
 *These are the busiest CTA ‘L’ stations based on total boardings from 2023–Present.*
@@ -80,7 +87,7 @@ _Average monthly boardings before and after COVID-19 (in millions)_
 
 ---
 
-## 6. Accessibility Gaps
+## 7. Accessibility Gaps
 Riders with disabilities still face barriers at **nearly 30%** of CTA stations. Non-accessible stops are concentrated along the Blue and Pink Lines, limiting equitable transit access across the system.
 
 ### **Map: Which CTA Stations are Non-ADA Accessible?**  
