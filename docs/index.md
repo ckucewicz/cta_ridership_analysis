@@ -35,7 +35,7 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 *Based on post-pandemic recovery pace (2020–2024), ridership could approach pre-COVID levels by 2030, though this projection should be interpreted with caution given limited data and a simple model.*
 
-<iframe src="figures/annual_ridership_forecast_linear_2020_2024.html"
+<iframe src="docs/figures/annual_ridership_forecast_logistic_2020_2024.html"
         width="100%" height="600" style="border:none;"></iframe>
 
 ---
