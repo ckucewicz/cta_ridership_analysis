@@ -33,7 +33,7 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 ## 4. Ridership Forecast
 
-*Based on post-pandemic recovery pace (2020–2024), ridership could approach pre-COVID levels by 2030, though this projection should be interpreted with caution given limited data and a simple model.*
+*Logistic growth modeling suggests CTA ridership will rebound sharply but level off around **85–90% of pre-COVID levels by 2030**. Projections should be interpreted with caution given the limited post-COVID data available.*
 
 <iframe src="docs/figures/annual_ridership_forecast_logistic_2020_2024.html"
         width="100%" height="600" style="border:none;"></iframe>
@@ -116,12 +116,14 @@ _The share of stations on each line that are ADA accessible as of 2023._
 
 ## Final Thoughts / Policy Implications
 
-CTA ‘L’ ridership has not fully recovered from the pandemic, and gaps in accessibility remain across the system. While some stations and months have seen stronger returns, overall usage lags behind pre-COVID levels by more than a third.
+CTA ‘L’ ridership has not fully recovered from the pandemic, and gaps in accessibility remain across the system. While some stations and months have seen stronger returns, overall usage lags behind pre-COVID levels by more than a third.  
 
-This presents both a challenge and an opportunity: 
+Looking ahead, projections based on logistic modeling suggest ridership will continue to rebound but eventually **plateau around 88–90% of pre-COVID levels**. This implies that a full return to past highs may be unlikely, reflecting lasting changes in work and travel patterns.  
 
-- **Ridership recovery strategies** must account for shifting travel patterns and equity considerations.
-- **Investment in accessibility** remains critical. Nearly 30% of stations are still not ADA compliant, disproportionately impacting low-income and historically underserved neighborhoods.
-- **Data transparency and tracking** will be key in monitoring progress and targeting improvements.
+This presents both a challenge and an opportunity:  
+
+- **Ridership recovery strategies** must account for shifting travel patterns and equity considerations, focusing not only on boosting usage but also on adapting service to new demand realities.  
+- **Investment in accessibility** remains critical. Nearly 30% of stations are still not ADA compliant, disproportionately impacting low-income and historically underserved neighborhoods.  
+- **Data transparency and tracking** will be key in monitoring progress and targeting improvements, especially as ridership stabilizes below historic peaks.  
 
 As Chicago plans for the future of its transit system, data-driven decisions rooted in equity and usability are essential.
