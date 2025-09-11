@@ -66,8 +66,22 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
 * Pink, Yellow, and Brown Lines have over 90% of stations ADA accessible.
 * Purple Line and Blue Line have the lowest at just 25% and 42%, respectively.
 
+# 6. Ridership Projections
 
-# 6. Key Takeaways
+To assess the future of CTA ridership, I modeled recovery trajectories using post-COVID data (2020–2024).  
+
+- A **linear regression** suggested ridership could return to near 100% of pre-COVID levels by 2030 if current trends continue.  
+- A more realistic **logistic growth model** indicates recovery will slow over time and eventually stabilize at about **85–90% of pre-COVID levels** (≈159M annual rides).  
+
+The logistic model was chosen for interpretation because transit demand is naturally bounded by factors like system capacity, travel demand, and long-term shifts in commuting behavior. While projections remain uncertain due to limited data, the logistic approach better reflects the likelihood that ridership recovery will taper off rather than return fully to past highs.
+
+### Forecast Visualization
+<img src="docs/figures/annual_ridership_forecast_logistic.png" alt="Logistic forecast of CTA ridership" width="80%"/>
+
+*Logistic growth model fit to annual ridership from 2020–2024, with ceiling anchored to pre-COVID levels. Red triangles show projected totals through 2030.*
+
+
+# 7. Key Takeaways
 1. **Ridership Has Not Recovered to Pre-COVID Levels**
    
 	Average ridership is still only ~63% of pre-COVID levels.
@@ -83,14 +97,14 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
 5. **Ridership Recovery Is Likely to Plateau Below Pre-COVID Levels**   
    Logistic growth modeling indicates that CTA ridership will rebound but eventually stabilize around **85–90% of pre-COVID levels** (≈159M annual rides). This suggests that even with continued gains, structural changes like remote work and shifting travel behavior may prevent a full return to past ridership highs.
 
-# 7. Next Steps
+# 8. Next Steps
 With CTA facing a potential budget cliff, further analysis should focus on supporting data-driven decisions around service planning and funding advocacy. Key next steps could include:
 
 1. **Analyze ridership by time of day or week** to better understand commuting patterns and identify opportunities for targeted service adjustments.
 
 2. **Overlay ridership data** with population density to assess equity in service coverage and identify potential gaps in access.
    
-# 8. Repository Structure
+# 9. Repository Structure
 <pre>
 ```
 cta_ridership_analysis/
