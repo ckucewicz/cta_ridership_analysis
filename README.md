@@ -72,22 +72,23 @@ Analysis was conducted in Python using Pandas, GeoPandas, and Matplotlib/Seaborn
    
 	Average ridership is still only ~63% of pre-COVID levels.
 
-3. **Accessibility Gaps Vary Greatly by Line**
+2. **Accessibility Gaps Vary Greatly by Line**
    
 	ADA access is highest on the Yellow and Pink Lines, lowest on Purple and Blue—highlighting equity concerns.
 
-4. **High Ridership is Concentrated at a Few Key Stations**
+3. **High Ridership is Concentrated at a Few Key Stations**
    
 	Stations like Lake, O’Hare, and Clark/Lake handle the most riders due to their centrality and transfer options.
+
+5. **Ridership Recovery Is Likely to Plateau Below Pre-COVID Levels**   
+   Logistic growth modeling indicates that CTA ridership will rebound but eventually stabilize around **85–90% of pre-COVID levels** (≈159M annual rides). This suggests that even with continued gains, structural changes like remote work and shifting travel behavior may prevent a full return to past ridership highs.
 
 # 7. Next Steps
 With CTA facing a potential budget cliff, further analysis should focus on supporting data-driven decisions around service planning and funding advocacy. Key next steps could include:
 
 1. **Analyze ridership by time of day or week** to better understand commuting patterns and identify opportunities for targeted service adjustments.
 
-2. **Forecast future ridership** using time series models to project recovery trends and inform long-term budget planning.
-
-3. **Overlay ridership data** with population density to assess equity in service coverage and identify potential gaps in access.
+2. **Overlay ridership data** with population density to assess equity in service coverage and identify potential gaps in access.
    
 # 8. Repository Structure
 <pre>
