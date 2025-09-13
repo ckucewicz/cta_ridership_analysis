@@ -33,7 +33,7 @@ CTA ‘L’ ridership saw a dramatic drop in 2020 and remains far below pre-pand
 
 ## 4. Ridership Forecast
 
-*Logistic growth modeling suggests CTA ridership will rebound sharply but level off around **85–90% of pre-COVID levels by 2030**. Projections should be interpreted with caution given the limited post-COVID data available.*
+*Logistic growth modeling suggests CTA ridership will rebound sharply but level off around **85–90% of pre-COVID levels by 2035**. Projections should be interpreted with caution given the limited post-COVID data available.*
 
 
 <iframe src="figures/annual_ridership_forecast_logistic_2020_2024.html"
